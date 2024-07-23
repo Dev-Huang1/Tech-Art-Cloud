@@ -7,52 +7,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="/assets/images/logo/Tech-Art-Cloud-Logo.png" type="image/x-icon">
     <script>
-       document.addEventListener('DOMContentLoaded', function() {
-    loadNews();
-});
-
-function loadNews() {
-    fetch('posts/posts.json')
-        .then(response => response.json())
-        .then(articles => {
-            const newsGrid = document.getElementById('newsGrid');
-            articles.forEach(article => {
-                const card = createNewsCard(article);
-                newsGrid.appendChild(card);
-            });
-        })
-        .catch(error => console.error('Error loading news:', error));
-}
-
-function createNewsCard(article) {
-    const card = document.createElement('div');
-    card.className = 'news-card';
-    card.innerHTML = `
-        <img src="${article.image}" alt="${article.title}">
-        <div class="news-card-content">
-            <h3>${article.title}</h3>
-            <p>${article.preview}</p>
-        </div>
-    `;
-    return card;
-}
-    </script>
-    <script>
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.getElementById('hamburger');
     const nav = document.getElementById('nav');
-    const dropdowns = document.querySelectorAll('.dropdown');
 
     hamburger.addEventListener('click', function() {
         nav.classList.toggle('active');
     });
-
-    dropdowns.forEach(dropdown => {
-        dropdown.addEventListener('click', function() {
-            this.classList.toggle('active');
-        });
-    });
 });
+
 
 function loadNews() {
     fetch('posts/posts.json')
@@ -377,78 +340,76 @@ function createNewsCard(article) {
     color: #666;
 }
 
+/* Media query for mobile devices */
 @media (max-width: 768px) {
     .header {
-        flex-direction: row;
+        display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 10px 20px;
-        height: auto;
+        padding: 10px;
+        background-color: #fff;
+        position: relative;
     }
 
     .logo {
-        flex-direction: row;
+        display: flex;
         align-items: center;
-        margin-bottom: 0;
+        flex: 1;
     }
 
     .logo img {
-        height: 30px;
+        height: 36px;
         margin-right: 10px;
     }
 
     .logo span {
-        display: none; /* 隐藏文字logo */
+        font-size: 16px;
     }
 
     .nav {
-        display: none; /* 默认隐藏导航菜单 */
+        display: none; /* Initially hidden */
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: #fff;
         position: absolute;
         top: 100%;
         left: 0;
-        right: 0;
-        background-color: #fff;
-        flex-direction: column;
-        align-items: stretch;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        z-index: 1;
+        transition: all 0.3s ease;
     }
 
     .nav.active {
-        display: flex; /* 当添加active类时显示导航菜单 */
+        display: flex;
     }
 
     .nav a, .nav .dropdown {
-        padding: 15px 20px;
+        padding: 10px 20px;
+        width: 100%;
+        text-align: center;
         border-bottom: 1px solid #e0e0e0;
     }
 
+    .nav .dropdown-content {
+        position: static;
+        display: flex;
+        flex-direction: column;
+    }
+
     .hamburger {
-        display: block; /* 显示汉堡菜单图标 */
         font-size: 24px;
+        color: #5c5c5c;
         cursor: pointer;
     }
 
     .search-icon {
-        font-size: 20px;
-        margin-right: 15px;
-    }
-
-    /* 调整下拉菜单样式 */
-    .dropdown-content {
-        position: static;
-        display: none;
-        box-shadow: none;
-        padding: 0;
-    }
-
-    .dropdown.active .dropdown-content {
-        display: block;
-    }
-
-    .dropdown-content a {
-        padding: 10px 30px;
+        font-size: 24px;
+        color: #5c5c5c;
+        margin-left: 15px;
     }
 }
+
     </style>
 </head>
 <body>
@@ -457,7 +418,7 @@ function createNewsCard(article) {
         <img src="assets/images/logo/Tech-Art-Cloud-Logo.png" alt="Tech-Art Cloud Logo">
         <span>Tech-Art | Cloud</span>
     </div>
-    <div class="header-icons">
+    <div class="right-icons">
         <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
         <div class="hamburger" id="hamburger">
             <i class="fas fa-bars"></i>
