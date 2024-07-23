@@ -1,0 +1,16 @@
+[
+  {
+    "id": "article1",
+    "title": "优化数据进行 AI 创新",
+    "date": "2024-03-15",
+    "image": "path/to/image1.jpg",
+    "preview": "将 PostgreSQL 数据库迁移到 Azure，以利用使你能够创建创新的新 AI 应用程序的内置 AI 功能。"
+  },
+  {
+    "id": "article2",
+    "title": "迁移 VMware 工作负载以实现节省",
+    "date": "2024-03-10",
+    "image": "path/to/image2.jpg",
+    "preview": "根据自己的情况实现现代化，并通过 VMware 快速迁移计划获得价格保护、特别优惠和迁移帮助。"
+  }
+]
