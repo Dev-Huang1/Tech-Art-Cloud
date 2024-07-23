@@ -79,6 +79,7 @@
             display: flex;
             align-items: center;
             height: 100%;
+            margin-left: auto;
         }
         .nav a, .nav .dropdown {
             color: #5c5c5c;
@@ -88,6 +89,7 @@
             height: 100%;
             display: flex;
             align-items: center;
+            margin-left: 20px;
         }
         .dropdown {
             position: relative;
@@ -342,19 +344,20 @@
             color: #666;
         }
 
-        /* 在电脑版中隐藏 hamburger-icon 和 search-icon */
-        @media screen and (min-width: 769px) {
-            .hamburger-icon, .search-icon {
-                display: none;
-            }
-            
-            .mobile-menu {
-                display: none;
+        .mobile-nav {
+            display: none;
+        }
+        .search-icon {
+            display: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            .search-icon, .hamburger-icon {
+                display: block;
             }
         }
 
-
-        /* 移动端样式 */
+        
         @media screen and (max-width: 768px) {
             .header {
                 padding: 0 20px;
