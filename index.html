@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech-Art Cloud Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+            color: #000;
+            background-color: #f5f5f5;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            height: 54px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 24px;
+            margin-right: 10px;
+        }
+        .logo span {
+            font-size: 18px;
+            font-weight: 600;
+            color: #5c5c5c;
+        }
+        .nav {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+        .nav a, .nav .dropdown {
+            color: #5c5c5c;
+            text-decoration: none;
+            font-size: 13px;
+            padding: 0 10px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .dropdown {
+            position: relative;
+            cursor: pointer;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            min-width: 200px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 1;
+            padding: 10px 0;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content a {
+            padding: 10px 20px;
+            display: block;
+            color: #5c5c5c;
+            text-decoration: none;
+        }
+        .dropdown-content a:hover {
+            background-color: #f0f0f0;
+        }
+        .search-icon {
+            margin-left: 10px;
+            font-size: 16px;
+            color: #5c5c5c;
+        }
+        .hero {
+            background: linear-gradient(135deg, #0acffe, #495aff);
+            padding: 60px 20px;
+            text-align: left;
+            color: #fff;
+        }
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            max-width: 600px;
+        }
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: 0066ff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            margin-right: 15px;
+        }
+        .btn:hover {
+            background-color: #FF8787;
+        }
+        .btn.green {
+            background-color: #4ECDC4;
+        }
+        .btn.green:hover {
+            background-color: #45B7AA;
+        }
+        .content {
+            padding: 40px 20px;
+            background-color: #fff;
+        }
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .product-card {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 16px;
+            padding: 20px;
+            transition: box-shadow 0.3s;
+        }
+        .product-card:hover {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .product-card i {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: #4ECDC4;
+        }
+        .product-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .product-card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .product-card a {
+            color: #0066ff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .next-steps {
+            background-color: #f9f9f9;
+            padding: 40px 20px;
+        }
+        .step-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .step-card {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        .step-card i {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #FF6B6B;
+        }
+        .step-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .step-card p {
+            font-size: 14px;
+            color: #666;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+        .footer-text {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <span>Tech-Art </span>
+            <span>| Cloud</span>
+        </div>
+        <nav class="nav">
+            <div class="dropdown">
+                <span>Browse</span>
+                <div class="dropdown-content">
+                    <a href="#">Learn about cloud services</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <span>Product</span>
+                <div class="dropdown-content">
+                    <a href="#">View All Products (10+)</a>
+                    <a href="#">Console</a>
+                    <a href="#">One Translate</a>
+                    <a href="#">One Captcha</a>
+                    <a href="#">One Pass Box</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <span></span>
+                <div class="dropdown-content">
+                    <!-- 更多下拉菜单内容 -->
+                </div>
+            </div>
+            <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+            <a href="#">Learn</a>
+            <a href="#">Support</a>
+            <a href="#">Contact Support</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Tech-Art Cloud</h1>
+        <p>Protecting privacy from the root.</p>
+        <a href="#" class="btn">Get Started</a>
+    </section>
+
+    <section class="content">
+        <h2 class="section-title">Product & Service</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <i class="fas fa-server"></i>
+                <h3>One Captcha</h3>
+                <p>Add One Captcha in seconds.</p>
+                <a href="#">Preview Product</a>
+            </div>
+            <div class="product-card">
+                <i class="fas fa-network-wired"></i>
+                <h3>One Pass</h3>
+                <p>Secure Password Generator.</p>
+                <a href="https://pass.xyehr.cn" target="_blank">Preview Product</a>
+            </div>
+            <div class="product-card">
+                <i class="fas fa-project-diagram"></i>
+                <h3>Easy Notes</h3>
+                <p>Store your notes locally.</p>
+                <a href="https://notes.xyehr.cn/" taget="_blank">Preview Product</a>
+            </div>
+            <div class="product-card">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <h3>One Cloud Storage</h3>
+                <p>Store your files securely in our cloud</p>
+                <a href="">Stay Tuned</a>
+            </div>
+            <div class="product-card">
+                <i class="fas fa-brain"></i>
+                <h3>One Translate</h3>
+                <p>Free translation service.</p>
+                <a href="#">Stay Tuned</a>
+            </div>
+            <div class="product-card">
+                <i class="fas fa-robot"></i>
+                <h3>One Mail</h3>
+                <p>A secure email service</p>
+                <a href="#">Stay Tuned</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="next-steps">
+        <h2 class="section-title">Taking the next step</h2>
+        <div class="step-grid">
+            <div class="step-card">
+                <i class="fas fa-rocket"></i>
+                <h3>Get Started</h3>
+                <p>Get started now and try our first product</p>
+            </div>
+            <div class="step-card">
+                <i class="fas fa-book"></i>
+                <h3>Learn</h3>
+                <p>Explore our extensive documentation and tutorial resources.</p>
+            </div>
+            <div class="step-card">
+                <i class="fas fa-users"></i>
+                <h3>Join Community</h3>
+                <p>Connect with other developers and get support.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">Contact us</a>
+            <a href="#">Report Problem</a>
+        </div>
+        <p class="footer-text">&copy; Tech-Art Cloud 2024</p>
+    </footer>
+</body>
+</html>
