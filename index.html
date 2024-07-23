@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+s<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,7 +12,7 @@
 });
 
 function loadNews() {
-    fetch('post/posts.json')
+    fetch('posts/posts.json')
         .then(response => response.json())
         .then(articles => {
             const newsGrid = document.getElementById('newsGrid');
