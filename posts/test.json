@@ -1,7 +1,7 @@
 {
   "title": "文章标题",
   "date": "YYYY-MM-DD",
-  "image": "path/to/preview-image.jpg",
+  "image": "https://cloud.xyehr.cn/assets/images/post/th.jpeg",
   "preview": "这里是文章的简短预览，通常不超过100字。",
   "content": "这里是文章的完整内容。您可以使用简单的文本或HTML标记来格式化内容。"
 }
