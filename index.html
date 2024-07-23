@@ -7,15 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="/assets/images/logo/Tech-Art-Cloud-Logo.png" type="image/x-icon">
     <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.getElementById('hamburger');
-    const nav = document.getElementById('nav');
-
-    hamburger.addEventListener('click', function() {
-        nav.classList.toggle('active');
-    });
+       document.addEventListener('DOMContentLoaded', function() {
+    loadNews();
 });
-
 
 function loadNews() {
     fetch('posts/posts.json')
@@ -42,7 +36,7 @@ function createNewsCard(article) {
     `;
     return card;
 }
-</script>
+    </script>
     <style>
         body, html {
             margin: 0;
@@ -339,124 +333,38 @@ function createNewsCard(article) {
     font-size: 14px;
     color: #666;
 }
-
-/* Media query for mobile devices */
-@media (max-width: 768px) {
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #fff;
-    position: relative;
-  }
-
-  .logo {
-    display: flex;
-    align-items: center;
-    flex: 1; /* Make logo take up remaining space */
-  }
-
-  .logo img {
-    height: 36px;
-    margin-right: 10px;
-  }
-
-  .logo span {
-    font-size: 16px;
-  }
-
-  .nav {
-    display: none; /* Initially hidden */
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    background-color: #fff;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1;
-    transition: all 0.3s ease;
-  }
-
-  .nav.active {
-    display: flex;
-  }
-
-  .nav a,
-  .nav .dropdown {
-    padding: 10px 20px;
-    width: 100%;
-    text-align: center;
-    border-bottom: 1px solid #e0e0e0;
-  }
-
-  .nav .dropdown-content {
-    position: static;
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* Re-order icons for mobile layout */
-  .right-icons {
-    display: flex;
-    flex: 1;
-    justify-content: flex-end;
-  }
-
-  .hamburger {
-    font-size: 24px;
-    color: #5c5c5c;
-    cursor: pointer;
-    margin-right: 15px; /* Add margin to space the icons */
-  }
-
-  .search-icon {
-    font-size: 24px;
-    color: #5c5c5c;
-  }
-}
-
     </style>
 </head>
 <body>
     <header class="header">
-    <div class="logo">
-        <img src="assets/images/logo/Tech-Art-Cloud-Logo.png" alt="Tech-Art Cloud Logo">
-        <span>Tech-Art | Cloud</span>
-    </div>
-    <div class="right-icons">
-        <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
-        <div class="hamburger" id="hamburger">
-            <i class="fas fa-bars"></i>
+        <div class="logo">
+            <img src="assets/images/logo/Tech-Art-Cloud-Logo.png">
+            <span>Tech-Art | Cloud</span>
         </div>
-    </div>
-    <nav class="nav" id="nav">
-        <div class="dropdown">
-            <span>Browse</span>
-            <div class="dropdown-content">
-                <a href="#">Learn about cloud services</a>
+        <nav class="nav">
+            <div class="dropdown">
+                <span>Browse</span>
+                <div class="dropdown-content">
+                    <a href="#">Learn about cloud services</a>
+                </div>
             </div>
-        </div>
-        <div class="dropdown">
-            <span>Product</span>
-            <div class="dropdown-content">
-                <a href="#">View All Products (10+)</a>
-                <a href="https://tech-art-cloud.us.kg">Console</a>
-                <a href="">One Translate</a>
-                <a href="">One Captcha</a>
-                <a href="">One Pass Box</a>
+            <div class="dropdown">
+                <span>Product</span>
+                <div class="dropdown-content">
+                    <a href="#">View All Products (10+)</a>
+                    <a href="https://tech-art-cloud.us.kg">Console</a>
+                    <a href="">One Translate</a>
+                    <a href="">One Captcha</a>
+                    <a href="">One Pass Box</a>
+                </div>
             </div>
-        </div>
-        <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
-        <a href="#">Learn</a>
-        <a href="help.xyehr.cn">Help</a>
-        <a href="mailto:support@xyehr.cn">Contact Support</a>
-    </nav>
-</header>
+            <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+            <a href="#">Learn</a>
+            <a href="help.xyehr.cn">Help</a>
+            <a href="mailto:support@xyehr.cn">Contact Support</a>
+        </nav>
+    </header>
 
-            
     <section class="hero">
         <h1>Tech-Art Cloud</h1>
         <p>Protecting privacy from the root.</p>
