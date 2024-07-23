@@ -265,74 +265,411 @@ function createNewsCard(article) {
     color: #fff;
 }
 
-.featured-product-content h3 {
-    font-size: 28px;
-    margin-bottom: 16px;
-}
+<script>
+       document.addEventListener('DOMContentLoaded', function() {
+            loadNews();
+            
+            // 添加移动端菜单切换功能
+            const hamburgerIcon = document.querySelector('.hamburger-icon');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            hamburgerIcon.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+            });
+        });
 
-.featured-product-content p {
-    font-size: 18px;
-    margin-bottom: 24px;
-}
+        function loadNews() {
+            fetch('posts/posts.json')
+                .then(response => response.json())
+                .then(articles => {
+                    const newsGrid = document.getElementById('newsGrid');
+                    articles.forEach(article => {
+                        const card = createNewsCard(article);
+                        newsGrid.appendChild(card);
+                    });
+                })
+                .catch(error => console.error('Error loading news:', error));
+        }
 
-.featured-product-content .btn {
-    background-color: #fff;
-    color: #000;
-}
+        function createNewsCard(article) {
+            const card = document.createElement('div');
+            card.className = 'news-card';
+            card.innerHTML = `
+                <img src="${article.image}" alt="${article.title}">
+                <div class="news-card-content">
+                    <h3>${article.title}</h3>
+                    <p>${article.preview}</p>
+                </div>
+            `;
+            return card;
+        }
+    </script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+            color: #000;
+            background-color: #f5fafe;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 65px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            height: 54px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 44px;
+            margin-right: 10px;
+        }
+        .logo span {
+            font-size: 18px;
+            font-weight: 600;
+            color: #5c5c5c;
+        }
+        .nav {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+        .nav a, .nav .dropdown {
+            color: #5c5c5c;
+            text-decoration: none;
+            font-size: 13px;
+            padding: 0 10px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .dropdown {
+            position: relative;
+            cursor: pointer;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            min-width: 200px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 1;
+            padding: 10px 0;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content a {
+            padding: 10px 20px;
+            display: block;
+            color: #5c5c5c;
+            text-decoration: none;
+        }
+        .dropdown-content a:hover {
+            background-color: #f0f0f0;
+        }
+        .search-icon {
+            margin-left: 10px;
+            font-size: 16px;
+            color: #5c5c5c;
+        }
+        .hero {
+            background: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
+            padding: 130px 65px;
+            text-align: left;
+            color: #fff;
+            height: 300px;
+        }
+        .hero h1 {
+            font-size: 46px;
+            margin-bottom: 10px;
+            max-width: 600px;
+            font-weight: 500;
+        }
+        .hero p {
+            font-size: 19px;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #0066ff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            margin-right: 15px;
+        }
+        .content {
+            padding: 40px 20px;
+            background-color: #f5fafe;
+        }
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .product-card {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            padding: 20px;
+            transition: box-shadow 0.3s;
+        }
+        .product-card:hover {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .product-card i {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: #0066ff;
+        }
+        .product-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .product-card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .product-card a {
+            color: #0066ff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .next-steps {
+            background-color: #f5fafe;
+            padding: 40px 20px;
+        }
+        .next-step h2 {
+            text-align: center;
+        }
+        .step-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .step-card {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            padding: 20px;
+            transition: box-shadow 0.3s;
+            text-alight: center;
+        }
+        .step-card i {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #0066ff;
+        }
+        .step-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .step-card p {
+            font-size: 14px;
+            color: #666;
+        }
+        .step-card a {
+            color: #0066ff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        footer {
+            background-color: #f2f2f2;
+            color: #6c6c6c;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .footer-links a {
+            color: #6c6c6c;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+        .footer-text {
+            font-size: 12px;
+            opacity: 0.8;
+        }
 
-.featured-product-content .btn:hover {
-    background-color: #f0f0f0;
-}
+        .featured-product {
+            display: flex;
+            background: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
 
-.featured-product-image {
-    flex: 1;
-    background-image: url('');
-    background-size: cover;
-    background-position: center;
-}
+        .featured-product-content {
+            flex: 1;
+            padding: 40px;
+            color: #fff;
+        }
 
-.product-grid {
-    margin-top: 40px;
-}
+        .featured-product-content h3 {
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
 
-.news-section {
-    padding: 40px 20px;
-    background-color: #f5f5f5;
-}
+        .featured-product-content p {
+            font-size: 18px;
+            margin-bottom: 24px;
+        }
 
-.news-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
+        .featured-product-content .btn {
+            background-color: #fff;
+            color: #000;
+        }
 
-.news-card {
-    background-color: #fff;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
+        .featured-product-content .btn:hover {
+            background-color: #f0f0f0;
+        }
 
-.news-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block; /* 确保图片正确显示 */
-}
+        .featured-product-image {
+            flex: 1;
+            background-image: url('');
+            background-size: cover;
+            background-position: center;
+        }
 
-.news-card-content {
-    padding: 20px;
-}
+        .product-grid {
+            margin-top: 40px;
+        }
 
-.news-card h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
+        .news-section {
+            padding: 40px 20px;
+            background-color: #f5f5f5;
+        }
 
-.news-card p {
-    font-size: 14px;
-    color: #666;
-}
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .news-card {
+            background-color: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .news-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .news-card-content {
+            padding: 20px;
+        }
+
+        .news-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .news-card p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* 移动端样式 */
+        @media screen and (max-width: 768px) {
+            .header {
+                padding: 0 20px;
+            }
+            
+            .nav {
+                display: none;
+            }
+            
+            .mobile-nav {
+                display: flex;
+                align-items: center;
+            }
+            
+            .search-icon, .hamburger-icon {
+                font-size: 24px;
+                color: #5c5c5c;
+                margin-left: 15px;
+            }
+            
+            .hamburger-icon {
+                cursor: pointer;
+            }
+
+            .mobile-menu {
+                display: none;
+                position: fixed;
+                top: 54px;
+                left: 0;
+                right: 0;
+                background-color: #fff;
+                padding: 20px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+
+            .mobile-menu.active {
+                display: block;
+            }
+
+            .mobile-menu a {
+                display: block;
+                padding: 10px 0;
+                color: #5c5c5c;
+                text-decoration: none;
+                font-size: 16px;
+            }
+
+            .hero {
+                padding: 80px 20px;
+                height: auto;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .featured-product {
+                flex-direction: column;
+            }
+
+            .featured-product-image {
+                height: 200px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -363,7 +700,19 @@ function createNewsCard(article) {
             <a href="help.xyehr.cn">Help</a>
             <a href="mailto:support@xyehr.cn">Contact Support</a>
         </nav>
+        <div class="mobile-nav">
+            <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+            <div class="hamburger-icon"><i class="fas fa-bars"></i></div>
+        </div>
     </header>
+
+    <div class="mobile-menu">
+        <a href="#">Browse</a>
+        <a href="#">Product</a>
+        <a href="#">Learn</a>
+        <a href="help.xyehr.cn">Help</a>
+        <a href="mailto:support@xyehr.cn">Contact Support</a>
+    </div>
 
     <section class="hero">
         <h1>Tech-Art Cloud</h1>
