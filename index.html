@@ -333,106 +333,37 @@ function createNewsCard(article) {
     font-size: 14px;
     color: #666;
 }
-
-/* Add styles for mobile view */
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        padding: 0 20px;
-    }
-
-    .logo {
-        flex: 1;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .logo img {
-        height: 40px;
-    }
-
-    .nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-    }
-
-    .nav a {
-        display: none; /* Hide old navigation items for mobile */
-    }
-
-    .search-icon {
-        font-size: 18px;
-    }
-
-    .hamburger-menu {
-        display: flex;
-        align-items: center;
-        position: relative;
-    }
-
-    .hamburger-icon {
-        font-size: 18px;
-        cursor: pointer;
-    }
-
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background-color: #fff;
-        min-width: 200px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        z-index: 1;
-        padding: 10px 0;
-    }
-
-    .hamburger-menu:hover .dropdown-content {
-        display: block;
-    }
-
-    .dropdown-content a {
-        padding: 10px 20px;
-        display: block;
-        color: #5c5c5c;
-        text-decoration: none;
-    }
-
-    .dropdown-content a:hover {
-        background-color: #f0f0f0;
-    }
-}
-
     </style>
 </head>
 <body>
     <header class="header">
-    <header class="header">
-    <div class="logo">
-        <img src="assets/images/logo/Tech-Art-Cloud-Logo.png">
-        <span>Tech-Art | Cloud</span>
-    </div>
-    <nav class="nav">
-        <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
-        <div class="dropdown hamburger-menu">
-            <span class="hamburger-icon"><i class="fas fa-bars"></i></span>
-            <div class="dropdown-content">
-                <a href="#">Learn about cloud services</a>
-                <a href="#">View All Products (10+)</a>
-                <a href="https://tech-art-cloud.us.kg">Console</a>
-                <a href="">One Translate</a>
-                <a href="">One Captcha</a>
-                <a href="">One Pass Box</a>
-                <a href="#">Learn</a>
-                <a href="help.xyehr.cn">Help</a>
-                <a href="mailto:support@xyehr.cn">Contact Support</a>
-            </div>
+        <div class="logo">
+            <img src="assets/images/logo/Tech-Art-Cloud-Logo.png">
+            <span>Tech-Art | Cloud</span>
         </div>
-    </nav>
-</header>
+        <nav class="nav">
+            <div class="dropdown">
+                <span>Browse</span>
+                <div class="dropdown-content">
+                    <a href="#">Learn about cloud services</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <span>Product</span>
+                <div class="dropdown-content">
+                    <a href="#">View All Products (10+)</a>
+                    <a href="https://tech-art-cloud.us.kg">Console</a>
+                    <a href="">One Translate</a>
+                    <a href="">One Captcha</a>
+                    <a href="">One Pass Box</a>
+                </div>
+            </div>
+            <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+            <a href="#">Learn</a>
+            <a href="help.xyehr.cn">Help</a>
+            <a href="mailto:support@xyehr.cn">Contact Support</a>
+        </nav>
+    </header>
 
     <section class="hero">
         <h1>Tech-Art Cloud</h1>
