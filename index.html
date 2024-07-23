@@ -37,6 +37,44 @@ function createNewsCard(article) {
     return card;
 }
     </script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    loadNews();
+
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+
+    hamburger.addEventListener('click', function() {
+        nav.classList.toggle('active');
+    });
+});
+
+function loadNews() {
+    fetch('posts/posts.json')
+        .then(response => response.json())
+        .then(articles => {
+            const newsGrid = document.getElementById('newsGrid');
+            articles.forEach(article => {
+                const card = createNewsCard(article);
+                newsGrid.appendChild(card);
+            });
+        })
+        .catch(error => console.error('Error loading news:', error));
+}
+
+function createNewsCard(article) {
+    const card = document.createElement('div');
+    card.className = 'news-card';
+    card.innerHTML = `
+        <img src="${article.image}" alt="${article.title}">
+        <div class="news-card-content">
+            <h3>${article.title}</h3>
+            <p>${article.preview}</p>
+        </div>
+    `;
+    return card;
+}
+</script>
     <style>
         body, html {
             margin: 0;
@@ -343,6 +381,13 @@ function createNewsCard(article) {
         height: auto;
     }
 
+    .logo {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+    }
+
     .logo img {
         height: 36px;
     }
@@ -352,8 +397,8 @@ function createNewsCard(article) {
     }
 
     .nav {
+        display: none;
         flex-direction: column;
-        align-items: flex-start;
         width: 100%;
     }
 
@@ -363,98 +408,52 @@ function createNewsCard(article) {
         text-align: left;
     }
 
-    .hero {
-        padding: 60px 20px;
-        text-align: center;
-        height: auto;
+    .nav.active {
+        display: flex;
     }
 
-    .hero h1 {
-        font-size: 32px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    .btn {
-        font-size: 14px;
-        padding: 10px 20px;
-    }
-
-    .product-grid, .step-grid, .news-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .product-card, .step-card, .news-card {
-        margin-bottom: 20px;
-    }
-
-    .featured-product {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .featured-product-content {
-        padding: 20px;
-    }
-
-    .featured-product-content h3 {
+    .hamburger {
+        display: block;
+        cursor: pointer;
         font-size: 24px;
     }
-
-    .featured-product-content p {
-        font-size: 16px;
-    }
-
-    .featured-product-content .btn {
-        margin: 0 auto;
-        font-size: 14px;
-        padding: 10px 20px;
-    }
-
-    .footer-links {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer-links a {
-        margin: 5px 0;
-    }
 }
-
     </style>
 </head>
 <body>
     <header class="header">
-        <div class="logo">
-            <img src="assets/images/logo/Tech-Art-Cloud-Logo.png">
-            <span>Tech-Art | Cloud</span>
+    <div class="logo">
+        <img src="assets/images/logo/Tech-Art-Cloud-Logo.png">
+        <span>Tech-Art | Cloud</span>
+    </div>
+    <nav class="nav" id="nav">
+        <div class="dropdown">
+            <span>Browse</span>
+            <div class="dropdown-content">
+                <a href="#">Learn about cloud services</a>
+            </div>
         </div>
-        <nav class="nav">
-            <div class="dropdown">
-                <span>Browse</span>
-                <div class="dropdown-content">
-                    <a href="#">Learn about cloud services</a>
-                </div>
+        <div class="dropdown">
+            <span>Product</span>
+            <div class="dropdown-content">
+                <a href="#">View All Products (10+)</a>
+                <a href="https://tech-art-cloud.us.kg">Console</a>
+                <a href="">One Translate</a>
+                <a href="">One Captcha</a>
+                <a href="">One Pass Box</a>
             </div>
-            <div class="dropdown">
-                <span>Product</span>
-                <div class="dropdown-content">
-                    <a href="#">View All Products (10+)</a>
-                    <a href="https://tech-art-cloud.us.kg">Console</a>
-                    <a href="">One Translate</a>
-                    <a href="">One Captcha</a>
-                    <a href="">One Pass Box</a>
-                </div>
-            </div>
-            <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
-            <a href="#">Learn</a>
-            <a href="help.xyehr.cn">Help</a>
-            <a href="mailto:support@xyehr.cn">Contact Support</a>
-        </nav>
-    </header>
+        </div>
+        <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+        <a href="#">Learn</a>
+        <a href="help.xyehr.cn">Help</a>
+        <a href="mailto:support@xyehr.cn">Contact Support</a>
+    </nav>
+    <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+    </div>
+</header>
 
+            
     <section class="hero">
         <h1>Tech-Art Cloud</h1>
         <p>Protecting privacy from the root.</p>
