@@ -214,6 +214,52 @@
             font-size: 12px;
             opacity: 0.8;
         }
+
+        .featured-product {
+    display: flex;
+    background: linear-gradient(135deg, #4ECDC4, #FF6B6B);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.featured-product-content {
+    flex: 1;
+    padding: 40px;
+    color: #fff;
+}
+
+.featured-product-content h3 {
+    font-size: 28px;
+    margin-bottom: 16px;
+}
+
+.featured-product-content p {
+    font-size: 18px;
+    margin-bottom: 24px;
+}
+
+.featured-product-content .btn {
+    background-color: #fff;
+    color: #4ECDC4;
+}
+
+.featured-product-content .btn:hover {
+    background-color: #f0f0f0;
+}
+
+.featured-product-image {
+    flex: 1;
+    background-image: url('path-to-your-image.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* 调整原有产品网格的样式，使其与新的展示卡片协调 */
+.product-grid {
+    margin-top: 40px;
+}
     </style>
 </head>
 <body>
@@ -260,6 +306,16 @@
 
     <section class="content">
         <h2 class="section-title">Product & Service</h2>
+        <div class="featured-product">
+            <div class="featured-product-content">
+                <h3>One Cloud Storage</h3>
+                <p>Store your files securely in our cloud</p>
+                <a href="" class="btn">Stay Tuned</a>
+            </div>
+            <div class="featured-product-image">
+                <!-- 这里可以放置产品相关的图片 -->
+            </div>
+        </div>
         <div class="product-grid">
             <div class="product-card">
                 <i class="fas fa-server"></i>
@@ -289,13 +345,13 @@
                 <i class="fas fa-brain"></i>
                 <h3>One Translate</h3>
                 <p>Free translation service.</p>
-                <a href="#">Stay Tuned</a>
+                <a href="">Stay Tuned</a>
             </div>
             <div class="product-card">
                 <i class="fas fa-robot"></i>
                 <h3>One Mail</h3>
                 <p>A secure email service</p>
-                <a href="#">Stay Tuned</a>
+                <a href="">Stay Tuned</a>
             </div>
         </div>
     </section>
