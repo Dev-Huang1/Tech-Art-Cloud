@@ -342,51 +342,87 @@
             color: #666;
         }
 
-        /* 桌面设备上隐藏这些元素 */
-.mobile-nav, .mobile-menu {
-    display: none;
-}
+        /* 在电脑版中隐藏 hamburger-icon 和 search-icon */
+        @media screen and (min-width: 769px) {
+            .hamburger-icon, .search-icon {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: none;
+            }
+        }
 
-/* 移动设备上显示这些元素 */
-@media screen and (max-width: 768px) {
-    .mobile-nav {
-        display: flex;
-        align-items: center;
-    }
-    
-    .search-icon, .hamburger-icon {
-        font-size: 24px;
-        color: #5c5c5c;
-        margin-left: 15px;
-    }
-    
-    .hamburger-icon {
-        cursor: pointer;
-    }
 
-    .mobile-menu {
-        display: none;
-        position: fixed;
-        top: 54px;
-        left: 0;
-        right: 0;
-        background-color: #fff;
-        padding: 20px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
+        /* 移动端样式 */
+        @media screen and (max-width: 768px) {
+            .header {
+                padding: 0 20px;
+            }
+            
+            .nav {
+                display: none;
+            }
+            
+            .mobile-nav {
+                display: flex;
+                align-items: center;
+            }
+            
+            .search-icon, .hamburger-icon {
+                font-size: 24px;
+                color: #5c5c5c;
+                margin-left: 15px;
+            }
+            
+            .hamburger-icon {
+                cursor: pointer;
+            }
 
-    .mobile-menu.active {
-        display: block;
-    }
+            .mobile-menu {
+                display: none;
+                position: fixed;
+                top: 54px;
+                left: 0;
+                right: 0;
+                background-color: #fff;
+                padding: 20px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
 
-    .mobile-menu a {
-        display: block;
-        padding: 10px 0;
-        color: #5c5c5c;
-        text-decoration: none;
-        font-size: 16px;
-    }
-}
+            .mobile-menu.active {
+                display: block;
+            }
+
+            .mobile-menu a {
+                display: block;
+                padding: 10px 0;
+                color: #5c5c5c;
+                text-decoration: none;
+                font-size: 16px;
+            }
+
+            .hero {
+                padding: 80px 20px;
+                height: auto;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .featured-product {
+                flex-direction: column;
+            }
+
+            .featured-product-image {
+                height: 200px;
+            }
+        }
     </style>
 </head>
 <body>
