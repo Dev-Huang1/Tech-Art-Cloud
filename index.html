@@ -333,6 +333,96 @@ function createNewsCard(article) {
     font-size: 14px;
     color: #666;
 }
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 20px;
+        height: auto;
+    }
+
+    .logo img {
+        height: 36px;
+    }
+
+    .logo span {
+        font-size: 16px;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .nav a, .nav .dropdown {
+        padding: 10px 0;
+        width: 100%;
+        text-align: left;
+    }
+
+    .hero {
+        padding: 60px 20px;
+        text-align: center;
+        height: auto;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .product-grid, .step-grid, .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-card, .step-card, .news-card {
+        margin-bottom: 20px;
+    }
+
+    .featured-product {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .featured-product-content {
+        padding: 20px;
+    }
+
+    .featured-product-content h3 {
+        font-size: 24px;
+    }
+
+    .featured-product-content p {
+        font-size: 16px;
+    }
+
+    .featured-product-content .btn {
+        margin: 0 auto;
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-links a {
+        margin: 5px 0;
+    }
+}
+
     </style>
 </head>
 <body>
