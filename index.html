@@ -39,13 +39,18 @@ function createNewsCard(article) {
     </script>
     <script>
 document.addEventListener('DOMContentLoaded', function() {
-    loadNews();
-
     const hamburger = document.getElementById('hamburger');
     const nav = document.getElementById('nav');
+    const dropdowns = document.querySelectorAll('.dropdown');
 
     hamburger.addEventListener('click', function() {
         nav.classList.toggle('active');
+    });
+
+    dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('click', function() {
+            this.classList.toggle('active');
+        });
     });
 });
 
@@ -372,51 +377,91 @@ function createNewsCard(article) {
     color: #666;
 }
 
-/* Media query for mobile devices */
 @media (max-width: 768px) {
     .header {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-        padding: 0 20px;
+        padding: 10px 20px;
         height: auto;
     }
 
     .logo {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-        margin-bottom: 10px;
+        margin-bottom: 0;
     }
 
     .logo img {
-        height: 36px;
-        margin-right: 0;
+        height: 30px;
+        margin-right: 10px;
     }
 
     .logo span {
-        font-size: 16px;
-        text-align: center;
+        display: none; /* 隐藏文字logo */
     }
 
     .nav {
+        display: none; /* 默认隐藏导航菜单 */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #fff;
         flex-direction: column;
-        align-items: center;
-        width: 100%;
+        align-items: stretch;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .nav.active {
+        display: flex; /* 当添加active类时显示导航菜单 */
     }
 
     .nav a, .nav .dropdown {
-        padding: 10px 0;
-        width: 100%;
-        text-align: center;
+        padding: 15px 20px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .hamburger {
+        display: block; /* 显示汉堡菜单图标 */
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .search-icon {
+        font-size: 20px;
+        margin-right: 15px;
+    }
+
+    /* 调整下拉菜单样式 */
+    .dropdown-content {
+        position: static;
+        display: none;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content a {
+        padding: 10px 30px;
     }
 }
-
     </style>
 </head>
 <body>
     <header class="header">
     <div class="logo">
-        <img src="assets/images/logo/Tech-Art-Cloud-Logo.png">
+        <img src="assets/images/logo/Tech-Art-Cloud-Logo.png" alt="Tech-Art Cloud Logo">
         <span>Tech-Art | Cloud</span>
+    </div>
+    <div class="header-icons">
+        <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
     </div>
     <nav class="nav" id="nav">
         <div class="dropdown">
@@ -440,9 +485,6 @@ function createNewsCard(article) {
         <a href="help.xyehr.cn">Help</a>
         <a href="mailto:support@xyehr.cn">Contact Support</a>
     </nav>
-    <div class="hamburger" id="hamburger">
-        <i class="fas fa-bars"></i>
-    </div>
 </header>
 
             
