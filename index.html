@@ -58,6 +58,9 @@
             text-align: center;
             margin-top: 50px;
         }
+        .hidden {
+            display: none;
+        }
         #original-content {
             display: none;
         }
@@ -587,7 +590,7 @@
 
     <script>
         function onTurnstileSuccess(token) {
-            document.getElementById('turnstile-container').classList.add('original-content');
+            document.getElementById('turnstile-container').classList.add('hidden');
         }
     </script>
 </body>
