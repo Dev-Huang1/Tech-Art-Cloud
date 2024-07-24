@@ -47,7 +47,7 @@
         }
     </script>
     <style>
-        .original-content {
+        body {
             margin: 0;
             padding: 0;
             font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
@@ -55,7 +55,6 @@
             background-color: #f5fafe;
         }
         .captcha-container {
-            background-color: #fff;
             text-align: center;
             margin-top: 50px;
         }
@@ -442,7 +441,7 @@
     </style>
 </head>   
 <body>
-    <div id="captcha-container" class="captcha-container">
+    <div id="captcha-container">
         <div class="cf-turnstile" data-sitekey="0x4AAAAAAAfuEfC_OCoYQaNL" data-callback="onTurnstileSuccess"></div>
     </div>
     
