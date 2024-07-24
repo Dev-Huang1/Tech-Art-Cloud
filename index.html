@@ -1,3 +1,5 @@
+我有一个html页面的源代码是：
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="/assets/images/logo/Tech-Art-Cloud-Logo.png" type="image/x-icon">
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-    <script>
+<script>
        document.addEventListener('DOMContentLoaded', function() {
             loadNews();
             
@@ -53,6 +55,28 @@
             font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
             color: #000;
             background-color: #f5fafe;
+        }
+        #turnstile-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+        }
+        #turnstile {
+            width: 300px;
+            padding: 20px;
+            background-color: #fff; 
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
+        }
+        #original-content {
+            display: none;
         }
         .header {
             display: flex;
@@ -355,20 +379,6 @@
         .mobile-menu {
             display: none;
         }
-
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.9);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            display: none;
-        }
         
         @media screen and (max-width: 768px) {
             .search-icon, .hamburger-icon, {
@@ -448,157 +458,166 @@
     </style>
 </head>
 <body>
-    <header class="header">
-        <div class="logo">
-            <img src="assets/images/logo/Tech-Art-Cloud-Logo.png">
-            <span>Tech-Art | Cloud</span>
-        </div>
-        <nav class="nav">
-            <div class="dropdown">
-                <span>Browse</span>
-                <div class="dropdown-content">
-                    <a href="#">Learn about cloud services</a>
-                </div>
+    <div id="turnstile-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0.7);">
+        <div id="turnstile" data-sitekey="0x4AAAAAAAft9lwT-31DBeAj"></div>
+    </div>
+    
+    <div id="original-content">
+        <header class="header">
+            <div class="logo">
+                <img src="assets/images/logo/Tech-Art-Cloud-Logo.png">
+                <span>Tech-Art | Cloud</span>
             </div>
-            <div class="dropdown">
-                <span>Product</span>
-                <div class="dropdown-content">
-                    <a href="#">View All Products (10+)</a>
-                    <a href="https://tech-art-cloud.us.kg">Console</a>
-                    <a href="">One Translate</a>
-                    <a href="">One Captcha</a>
-                    <a href="">One Pass Box</a>
+            <nav class="nav">
+                <div class="dropdown">
+                    <span>Browse</span>
+                    <div class="dropdown-content">
+                        <a href="#">Learn about cloud services</a>
+                    </div>
                 </div>
+                <div class="dropdown">
+                    <span>Product</span>
+                    <div class="dropdown-content">
+                        <a href="#">View All Products (10+)</a>
+                        <a href="https://tech-art-cloud.us.kg">Console</a>
+                        <a href="">One Translate</a>
+                        <a href="">One Captcha</a>
+                        <a href="">One Pass Box</a>
+                    </div>
+                </div>
+                <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+                <a href="#">Learn</a>
+                <a href="help.xyehr.cn">Help</a>
+                <a href="mailto:support@xyehr.cn">Contact Support</a>
+            </nav>
+            <div class="mobile-nav">
+                <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+                <div class="hamburger-icon"><i class="fas fa-bars"></i></div>
             </div>
-            <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+        </header>
+    
+        <div class="mobile-menu">
+            <a href="#">Browse</a>
+            <a href="#">Product</a>
             <a href="#">Learn</a>
             <a href="help.xyehr.cn">Help</a>
             <a href="mailto:support@xyehr.cn">Contact Support</a>
-        </nav>
-        <div class="mobile-nav">
-            <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
-            <div class="hamburger-icon"><i class="fas fa-bars"></i></div>
         </div>
-    </header>
-
-    <div class="mobile-menu">
-        <a href="#">Browse</a>
-        <a href="#">Product</a>
-        <a href="#">Learn</a>
-        <a href="help.xyehr.cn">Help</a>
-        <a href="mailto:support@xyehr.cn">Contact Support</a>
-    </div>
-
-    <section class="hero">
-        <h1>Tech-Art Cloud</h1>
-        <p>Protecting privacy from the root.</p>
-        <a href="#" class="btn">Get Started</a>
-    </section>
-
-    <section class="news-section">
-        <h2 class="section-title">Learn about news</h2>
-            <div class="news-grid" id="newsGrid">
-                <!-- 文章将在这里动态加载 -->
-            </div>
-    </section>
     
-    <section class="content">
-        <h2 class="section-title">Product & Service</h2>
-        <div class="featured-product">
-            <div class="featured-product-content">
-                <h3>One Cloud Storage</h3>
-                <p>Store your files securely in our cloud</p>
-                <a href="" class="btn">Stay Tuned</a>
+        <section class="hero">
+            <h1>Tech-Art Cloud</h1>
+            <p>Protecting privacy from the root.</p>
+            <a href="#" class="btn">Get Started</a>
+        </section>
+    
+        <section class="news-section">
+            <h2 class="section-title">Learn about news</h2>
+                <div class="news-grid" id="newsGrid">
+                    <!-- 文章将在这里动态加载 -->
+                </div>
+        </section>
+        
+        <section class="content">
+            <h2 class="section-title">Product & Service</h2>
+            <div class="featured-product">
+                <div class="featured-product-content">
+                    <h3>One Cloud Storage</h3>
+                    <p>Store your files securely in our cloud</p>
+                    <a href="" class="btn">Stay Tuned</a>
+                </div>
+                <div class="featured-product-image">
+                    <!-- 这里可以放置产品相关的图片 -->
+                </div>
             </div>
-            <div class="featured-product-image">
-                <!-- 这里可以放置产品相关的图片 -->
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://captcha.xyehr.cn/assets/logo/One-Captcha-Logo.png" width="45px" height="45px">
+                    <h3>One Captcha</h3>
+                    <p>Add One Captcha in seconds.</p>
+                    <a href="#">Preview Product</a>
+                </div>
+                <div class="product-card">
+                    <img src="https://pass.xyehr.cn/assets/images/One-Pass-Logo.png" width="45px" height="45px">
+                    <h3>One Pass</h3>
+                    <p>Secure Password Generator.</p>
+                    <a href="https://pass.xyehr.cn" target="_blank">Preview Product</a>
+                </div>
+                <div class="product-card">
+                    <img src="https://notes.xyehr.cn/assets/images/Easy-Notes-Logo.png" width="45px" height="45px">
+                    <h3>Easy Notes</h3>
+                    <p>Store your notes locally.</p>
+                    <a href="https://notes.xyehr.cn/" taget="_blank">Preview Product</a>
+                </div>
+                <div class="product-card">
+                    <i class="fas fa-server"></i>
+                    <h3>One Cloud Storage</h3>
+                    <p>Store your files securely in our cloud</p>
+                    <a href="">Stay Tuned</a>
+                </div>
+                <div class="product-card">
+                    
+                    <h3>One Translate</h3>
+                    <p>Free translation service.</p>
+                    <a href="">Stay Tuned</a>
+                </div>
+                <div class="product-card">
+                    <i class="fas fa-mail"></i>
+                    <h3>One Mail</h3>
+                    <p>A secure email service</p>
+                    <a href="">Stay Tuned</a>
+                </div>
             </div>
-        </div>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="https://captcha.xyehr.cn/assets/logo/One-Captcha-Logo.png" width="45px" height="45px">
-                <h3>One Captcha</h3>
-                <p>Add One Captcha in seconds.</p>
-                <a href="#">Preview Product</a>
+        </section>
+    
+        <section class="next-steps">
+            <h2 class="section-title">Taking the next step</h2>
+            <div class="step-grid">
+                <div class="product-card">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Get Started</h3>
+                    <p>Get started now and try our first product</p>
+                    <a href="#Product & Service">Get Started</a>
+                </div>
+                <div class="product-card">
+                    <i class="fas fa-book"></i>
+                    <h3>Learn</h3>
+                    <p>Explore our extensive documentation and tutorial resources.</p>
+                    <a href=""></a>
+                </div>
+                <div class="product-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Join Community</h3>
+                    <p>Connect with other developers and get support.</p>
+                    <a href="https://discord.gg/4v4YFkdDjH">Join Our Discord Community</a>
+                </div>
             </div>
-            <div class="product-card">
-                <img src="https://pass.xyehr.cn/assets/images/One-Pass-Logo.png" width="45px" height="45px">
-                <h3>One Pass</h3>
-                <p>Secure Password Generator.</p>
-                <a href="https://pass.xyehr.cn" target="_blank">Preview Product</a>
+        </section>
+    
+        <footer>
+            <div class="footer-links">
+                <a href="#">Contact us</a>
+                <a href="#">Report Problem</a>
             </div>
-            <div class="product-card">
-                <img src="https://notes.xyehr.cn/assets/images/Easy-Notes-Logo.png" width="45px" height="45px">
-                <h3>Easy Notes</h3>
-                <p>Store your notes locally.</p>
-                <a href="https://notes.xyehr.cn/" taget="_blank">Preview Product</a>
-            </div>
-            <div class="product-card">
-                <i class="fas fa-server"></i>
-                <h3>One Cloud Storage</h3>
-                <p>Store your files securely in our cloud</p>
-                <a href="">Stay Tuned</a>
-            </div>
-            <div class="product-card">
-                
-                <h3>One Translate</h3>
-                <p>Free translation service.</p>
-                <a href="">Stay Tuned</a>
-            </div>
-            <div class="product-card">
-                <i class="fas fa-mail"></i>
-                <h3>One Mail</h3>
-                <p>A secure email service</p>
-                <a href="">Stay Tuned</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="next-steps">
-        <h2 class="section-title">Taking the next step</h2>
-        <div class="step-grid">
-            <div class="product-card">
-                <i class="fas fa-rocket"></i>
-                <h3>Get Started</h3>
-                <p>Get started now and try our first product</p>
-                <a href="#Product & Service">Get Started</a>
-            </div>
-            <div class="product-card">
-                <i class="fas fa-book"></i>
-                <h3>Learn</h3>
-                <p>Explore our extensive documentation and tutorial resources.</p>
-                <a href=""></a>
-            </div>
-            <div class="product-card">
-                <i class="fas fa-users"></i>
-                <h3>Join Community</h3>
-                <p>Connect with other developers and get support.</p>
-                <a href="https://discord.gg/4v4YFkdDjH">Join Our Discord Community</a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-links">
-            <a href="#">Contact us</a>
-            <a href="#">Report Problem</a>
-        </div>
-        <p class="footer-text">&copy; Tech-Art Cloud 2024</p>
-    </footer>
+            <p class="footer-text">&copy; Tech-Art Cloud 2024</p>
+        </footer>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const overlay = document.getElementById('overlay');
+            // 显示 Turnstile 验证框
             const turnstileContainer = document.getElementById('turnstile-container');
-            
-            turnstile.render(turnstileContainer, {
-                sitekey: '0x4AAAAAAAft9lwT-31DBeAj',
-                callback: function(response) {
-                    overlay.style.display = 'none';
+            const originalContent = document.getElementById('original-content');
+
+            // 监听 Turnstile 验证成功事件
+            window.addEventListener('message', function(event) {
+                if (event.data.event === 'turnstile:success') {
+                    turnstileContainer.style.display = 'none';
+                    originalContent.style.display = 'block';
                 }
             });
 
-            overlay.style.display = 'flex';
+            // 初始化 Turnstile 验证
+            turnstile.render('#turnstile');
         });
     </script>
 </body>
