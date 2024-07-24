@@ -586,10 +586,9 @@
     </div>
 
     <script>
-        function onTurnstileSuccess(token) {
-            document.getElementById('captcha-container').classList.add('hidden');
-            
+        function onTurnstileSuccess(token) {        
             setTimeout(function() {
+                document.getElementById('captcha-container').classList.add('hidden');
                 document.getElementById('original-content').classList.remove('hidden');
             }, 1342);
         }
