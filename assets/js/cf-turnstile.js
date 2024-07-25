@@ -7,7 +7,7 @@ function generateRandomString(length) {
         return result;
     }
 
-function TurnstileURL {
+function TurnstileURL() {
         const randomString = generateRandomString(300);
         const newUrl = window.location.href.split('?')[0] + '?cf-turnstile-code=' + randomString;
         window.history.replaceState(null, null, newUrl);
