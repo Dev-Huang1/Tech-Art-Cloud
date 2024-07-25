@@ -7,13 +7,11 @@ function generateRandomString(length) {
         return result;
     }
 
-function TurnstileURL() {
+function onTurnstileSuccess(token) {  
         const randomString = generateRandomString(300);
         const newUrl = window.location.href.split('?')[0] + '?cf-turnstile-code=' + randomString;
         window.history.replaceState(null, null, newUrl);
-}
-
-    function onTurnstileSuccess(token) {  
+            
         setTimeout(function() {
             window.history.replaceState(null, null, window.location.pathname);
             document.getElementById('captcha-container').classList.add('hidden');
