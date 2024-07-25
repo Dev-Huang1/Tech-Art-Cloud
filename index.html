@@ -616,7 +616,7 @@
 
     <script>  
         function generateRandomString(length) {
-            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789#％＆@';
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
             let result = '';
             for (let i = 0; i < length; i++) {
                 result += characters.charAt(Math.floor(Math.random() * characters.length));
@@ -625,8 +625,8 @@
         }
 
         function TurnstileURL {
-            const randomString = generateRandomString(1000);
-            const newUrl = window.location.href.split('?')[0] + '?cf-turnstile-code=' + randomString;
+            const randomString = generateRandomString(20);
+            const newUrl = window.location.href.split('?')[0] + '?cf-turnstile=' + randomString;
             window.history.replaceState(null, null, newUrl);
         }
         
