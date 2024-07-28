@@ -70,32 +70,23 @@
             margin-left: 20px;
         }
         .dropdown {
-            /* position: relative; */
+            position: relative;
             cursor: pointer;
         }
         .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fff;
-    min-width: 200px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    z-index: 1;
-    padding: 10px 0;
-    border-radius: 12px;
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-    animation: dropdownSlideDown 0.3s forwards;
-}
-
-.dropdown-content.hide {
-    animation: dropdownSlideUp 0.3s forwards;
-}
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            min-width: 200px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 1;
+            padding: 10px 0;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
         .dropdown-content a {
             padding: 10px 20px;
             display: block;
@@ -341,9 +332,15 @@
         .mobile-menu {
             display: none;
         }
-
+        
         @media screen and (max-width: 768px) {
-            .se@media screen and (max-width: 768px) {
+            .search-icon, .hamburger-icon, {
+                display: block;
+            }
+        }
+
+        
+        @media screen and (max-width: 768px) {
             .header {
                 padding: 0 20px;
             }
@@ -376,35 +373,18 @@
                 background-color: #fff;
                 padding: 20px;
                 box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-                border-radius: 0 0 35px 35px;
-                transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-                transform: translateY(-100%);
-                opacity: 0;
-                z-index: 1000;
             }
 
             .mobile-menu.active {
                 display: block;
-                transform: translateY(0);
-                opacity: 1;
             }
 
             .mobile-menu a {
                 display: block;
-                padding: 15px 0;
+                padding: 10px 0;
                 color: #5c5c5c;
                 text-decoration: none;
                 font-size: 16px;
-                border-bottom: 1px solid #f0f0f0;
-                transition: background-color 0.2s ease;
-            }
-
-            .mobile-menu a:last-child {
-                border-bottom: none;
-            }
-
-            .mobile-menu a:hover {
-                background-color: #f5f5f5;
             }
 
             .hero {
@@ -425,7 +405,7 @@
             }
 
             .featured-product-image {
-                height: 200px;
+                height: 200px
             }
         }
     </style>
