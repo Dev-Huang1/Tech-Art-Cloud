@@ -83,6 +83,7 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             z-index: 1;
             padding: 10px 0;
+            border-radius: 0 0 35px 35px;
         }
         .dropdown:hover .dropdown-content {
             display: block;
@@ -364,6 +365,24 @@
                 cursor: pointer;
             }
 
+            .hamburger-icon.active i::before {
+    content: "\f00d"; /* fa-times */
+}
+
+.mobile-menu .contacts-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 12px;
+    text-align: center;
+    color: #5c5c5c;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+
             .mobile-menu {
                 display: none;
                 position: fixed;
@@ -441,7 +460,6 @@
                 </div>
                 <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
                 <a href="https://help.xyehr.cn">Help</a>
-                <a href="help.xyehr.cn">Help</a>
                 <a href="mailto:support@xyehr.cn">Contact Support</a>
             </nav>
             <div class="mobile-nav">
@@ -455,6 +473,7 @@
             <a href="#">Product</a>
             <a href="help.xyehr.cn">Help</a>
             <a href="mailto:support@xyehr.cn">Contact Support</a>
+            <a href="#" class="contacts-btn">Contacts</a>
         </div>
     
         <section class="hero">
