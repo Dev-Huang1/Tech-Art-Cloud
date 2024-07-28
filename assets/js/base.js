@@ -1,13 +1,24 @@
-document.addEventListener('DOMContentLoaded', function() {
-        loadNews();
-        
-        const hamburgerIcon = document.querySelector('.hamburger-icon');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        
-        hamburgerIcon.addEventListener('click', function() {
-            mobileMenu.classList.toggle('active');
-        });
+document.addEventListener('DOMContentLoaded', function () {
+    var menuButton = document.querySelector('.menu-button');
+    var mobileMenu = document.querySelector('.mobile-menu');
+
+    menuButton.addEventListener('click', function () {
+        if (mobileMenu.classList.contains('active')) {
+            mobileMenu.classList.remove('active');
+            mobileMenu.classList.add('hide');
+
+            mobileMenu.addEventListener('animationend', function handler() {
+                mobileMenu.style.display = 'none';
+                mobileMenu.classList.remove('hide');
+                mobileMenu.removeEventListener('animationend', handler);
+            });
+        } else {
+            mobileMenu.style.display = 'block';
+            mobileMenu.classList.add('active');
+        }
     });
+});
+
 
 document.querySelector('.hamburger-icon').addEventListener('click', function() {
     document.querySelector('.mobile-menu').classList.toggle('active');
