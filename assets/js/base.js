@@ -9,6 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+document.querySelector('.hamburger-icon').addEventListener('click', function() {
+    document.querySelector('.mobile-menu').classList.toggle('active');
+});
+
+
     function loadNews() {
         fetch('posts/posts.json')
             .then(response => response.json())
