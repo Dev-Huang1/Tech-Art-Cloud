@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 document.querySelector('.hamburger-icon').addEventListener('click', function() {
+    this.classList.toggle('active');
     document.querySelector('.mobile-menu').classList.toggle('active');
 });
 
