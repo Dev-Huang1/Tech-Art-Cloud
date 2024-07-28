@@ -74,25 +74,28 @@
             cursor: pointer;
         }
         .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #fff;
-            min-width: 200px;
-            border-radius: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            z-index: 1;
-            padding: 10px 0;
-            opacity: 0;
-            transition: opacity 0.3s ease, transform 0.3s ease; /* 增加动画 */
-            transform: translateY(10px);
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1;
+    padding: 10px 0;
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    animation: dropdownSlideDown 0.3s forwards;
+}
+
+.dropdown-content.hide {
+    animation: dropdownSlideUp 0.3s forwards;
+}
         .dropdown-content a {
             padding: 10px 20px;
             display: block;
@@ -338,6 +341,29 @@
         .mobile-menu {
             display: none;
         }
+
+        @keyframes dropdownSlideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes dropdownSlideUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
         
         @media screen and (max-width: 768px) {
             .search-icon, .hamburger-icon, {
