@@ -54,6 +54,7 @@
             color: #5c5c5c;
         }
         .nav {
+            position: fixed;
             display: flex;
             align-items: center;
             height: 100%;
@@ -357,6 +358,7 @@
             
             .mobile-nav {
                 display: flex;
+                position: fixed;
                 align-items: center;
             }
             
@@ -380,7 +382,8 @@
         padding: 20px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         z-index: 1000;
-        border-radius: 12px; 
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
         opacity: 0;
         transition: opacity 0.3s ease, transform 0.3s ease; 
         transform: translateY(-10px); 
