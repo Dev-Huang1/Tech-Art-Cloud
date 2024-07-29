@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.toggle('active');
         });
     });
+    loadNews();
 });
 
 function loadNews() {
