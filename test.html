@@ -404,6 +404,17 @@
         .mobile-menu {
             display: none;
         }
+
+        .product-card, .feature-card, .step-card, .news-card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        
+        .product-card.show, .feature-card.show, .step-card.show, .news-card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
         
         @media screen and (max-width: 768px) {
             .search-icon, .hamburger-icon, {
@@ -702,5 +713,33 @@
             }, 1869);
         }
     </script>-->
+
+    <script>
+    function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    function handleScroll() {
+        var cards = document.querySelectorAll('.product-card, .feature-card, .step-card, .news-card');
+        cards.forEach(function(card) {
+            if (isElementInViewport(card)) {
+                card.classList.add('show');
+            }
+        });
+    }
+
+    // Trigger the effect on initial load
+    handleScroll();
+
+    // Listen for scroll events
+    window.addEventListener('scroll', handleScroll);
+</script>
+
 </body>
   </html>
