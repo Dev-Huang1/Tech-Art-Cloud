@@ -1,29 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var menuButton = document.querySelector('.menu-button');
-    var mobileMenu = document.querySelector('.mobile-menu');
-
-    menuButton.addEventListener('click', function () {
-        if (mobileMenu.classList.contains('active')) {
-            mobileMenu.classList.remove('active');
-            mobileMenu.classList.add('hide');
-
-            mobileMenu.addEventListener('animationend', function handler() {
-                mobileMenu.style.display = 'none';
-                mobileMenu.classList.remove('hide');
-                mobileMenu.removeEventListener('animationend', handler);
+    vdocument.addEventListener('DOMContentLoaded', function() {
+            loadNews();
+            
+            // 添加移动端菜单切换功能
+            const hamburgerIcon = document.querySelector('.hamburger-icon');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            hamburgerIcon.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
             });
-        } else {
-            mobileMenu.style.display = 'block';
-            mobileMenu.classList.add('active');
-        }
-    });
-});
-
-
-document.querySelector('.hamburger-icon').addEventListener('click', function() {
-    this.classList.toggle('active');
-    document.querySelector('.mobile-menu').classList.toggle('active');
-});
+        });
 
 
     function loadNews() {
