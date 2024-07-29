@@ -53,7 +53,7 @@
         .logo span {
             font-size: 18px;
             font-weight: 600;
-            color: #000;
+            color: #222224;
         }
         .nav {
             display: flex;
@@ -92,7 +92,7 @@
         .dropdown-content a {
             padding: 10px 20px;
             display: block;
-            color: #000;
+            color: #222224;
             text-decoration: none;
         }
         .dropdown-content a:hover {
@@ -101,38 +101,109 @@
         .search-icon {
             margin-left: 10px;
             font-size: 16px;
-            color: #000;
+            color: #222224;
         }
         .hero {
-    background: url('assets/images/banner_2.png') no-repeat center center;
+    background: url('assets/images/banner.png') no-repeat center center;
     background-size: cover;
-    padding: 130px 65px;
-    text-align: left;
-    color: #000;
-    height: 300px;
+    padding: 80px 65px;
+    display: flex;
+    align-items: center;
 }
-        .hero h1 {
-            font-size: 46px;
-            margin-bottom: 10px;
-            max-width: 600px;
-            font-weight: bold;
-        }
-        .hero p {
-            font-size: 19px;
-            max-width: 600px;
-            margin-bottom: 30px;
-        }
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #0066ff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 12px;
-            font-size: 16px;
-            transition: background-color 0.3s;
-            margin-right: 15px;
-        }
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 46px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #222224;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #222224;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1)
+}
+
+.btn-1 {
+    background-color: #0066ff;
+    color: #fff;
+}
+
+.btn-2 {
+    background-color: #fff;
+    color: #222224;
+    border: 1px solid #0066ff;
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 65px;
+    background-color: #fff;
+}
+
+.feature-card {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    margin: 0 10px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1)
+}
+
+.feature-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.feature-card p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.feature-link {
+    color: #4285f4;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        padding: 60px 20px;
+    }
+    
+    .features {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .feature-card {
+        margin: 10px 0;
+    }
+}
         .content {
             padding: 40px 20px;
             background-color: #fff;
@@ -149,7 +220,7 @@
         }
         .product-card {
             background-color: #fff;
-            border: 1px solid #e0e0e0;
+            /*border: 1px solid #e0e0e0;*/
             border-radius: 20px;
             padding: 20px;
             transition: box-shadow 0.3s;
@@ -357,7 +428,7 @@
             
             .search-icon, .hamburger-icon {
                 font-size: 24px;
-                color: #000;
+                color: #222224;
                 margin-left: 15px;
             }
             
@@ -383,7 +454,16 @@
     margin-top: 10px;
 }
 
+.hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
+    /*.hero-buttons .btn-1,
+    .hero-buttons .btn-2 {
+        margin: 2px 0;
+    }*/
+            
             .mobile-menu {
                 display: none;
                 position: fixed;
@@ -409,7 +489,7 @@
             }
 
             .hero {
-                background: url('assets/images/banner_1.png') no-repeat center center;
+                background: url('assets/images/banner.png') no-repeat center center;
                 background-size: cover;
                 padding: 80px 20px;
                 height: 385px;
@@ -480,11 +560,34 @@
         </div>
     
         <section class="hero">
-            <h1>Tech-Art Cloud</h1>
-            <p>A new cloud platform that provides scalable infrastructure, storage, and development tools for building digital services and applications. </p>
-            <p>Developed by Tech-Art, a technology team that builds services for privacy-safe and smart products.</p>
-            <a href="#" class="btn">Get Started</a>
-        </section>
+    <div class="hero-content">
+        <h1>Tech-Art Cloud</h1>
+        <p>A full-fledged cloud platform providing scalable infrastructure, storage, machine learning and development tools to build and enhance digital services and applications.</p>
+        <p>Developed by Tech-Art, one of the largest technological companies in the world that builds intelligent products and services.</p>
+        <div class="hero-buttons">
+            <a href="#" class="btn btn-1">Explore our services</a>
+            <a href="#" class="btn btn-2">Join us</a>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="feature-card">
+        <h3>5+ services and growing</h3>
+        <p>An expanding ecosystem of services covering all Internet security needs: One Captcha, One Pass Box.</p>
+        <a href="#" class="feature-link">Explore our services</a>
+    </div>
+    <div class="feature-card">
+        <h3>Secure, free and open source</h3>
+        <p>Our mission is to protect the security and privacy of the Internet, and our projects are open source.</p>
+        <a href="#" class="feature-link">Get Started</a>
+    </div>
+    <div class="feature-card">
+        <h3>Committed to innovation</h3>
+        <p>ROur team is committed to innovation and has developed many services and products to protect security.</p>
+        <a href="#" class="feature-link">Join us</a>
+    </div>
+</section>
     
         <section class="news-section">
             <h2 class="section-title">Learn about news</h2>
@@ -600,4 +703,4 @@
         }
     </script>-->
 </body>
-</html>
+  </html>
