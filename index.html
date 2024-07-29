@@ -9,7 +9,7 @@
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <script src="/assets/js/base.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+        @import url('/assets/font/open-sans.css');
 
         body {
             margin: 0;
@@ -154,7 +154,12 @@
             color: #222224;
             border: 1px solid #0066ff;
         }
-        
+
+        .btn:hover {
+            filter: brightness(0.9);
+            transition: filter 0.3s ease;
+        }
+
         .features {
             display: flex;
             justify-content: space-between;
@@ -166,7 +171,7 @@
             flex: 1;
             padding: 20px;
             background-color: #fff;
-            border-radius: 20px;
+            border-radius: 23px;
             margin: 0 10px;
             box-shadow: 0 0 8px rgba(0,0,0,0.1)
         }
@@ -188,6 +193,26 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 14px;
+        }
+
+        .feature-link, .product-card a, .step-card a {
+            position: relative;
+            text-decoration: none;
+        }
+        
+        .feature-link::after, .product-card a::after, .step-card a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #0066ff;
+            transition: width 0.3s ease;
+        }
+        
+        .feature-link:hover::after, .product-card a:hover::after, .step-card a:hover::after {
+            width: 100%;
         }
 
         @media screen and (max-width: 768px) {
@@ -233,20 +258,20 @@
             color: #0066ff;
         }
         .product-card h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
+            font-size: 20px;
+            margin-bottom: 15px;
             color: #333;
         }
         .product-card p {
             font-size: 14px;
             color: #666;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
         .product-card a {
-            color: #0066ff;
+            color: #4285f4;
             text-decoration: none;
+            font-weight: bold;
             font-size: 14px;
-            font-weight: 600;
         }
         .next-steps {
             background-color: #fff;
@@ -542,13 +567,12 @@
                 <div class="dropdown">
                     <span>Product</span>
                     <div class="dropdown-content">
-                        <a href="#">View All Products (10+)</a>
+                        <a href="#">View All Products (5+)</a>
                         <a href="">One Translate</a>
                         <a href="https://captcha.xyehr.cn/demo/v3-db">One Captcha</a>
                         <a href="https://pass.xyehr.cn">One Pass Box</a>
                     </div>
                 </div>
-                <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
                 <a href="https://help.xyehr.cn">Help</a>
                 <a href="mailto:support@xyehr.cn">Contact Support</a>
             </nav>
@@ -662,7 +686,7 @@
                     <i class="fas fa-rocket"></i>
                     <h3>Get Started</h3>
                     <p>Get started now and try our first product</p>
-                    <a href="#Product & Service">Get Started</a>
+                    <a href="">Get Started</a>
                 </div>
                 <div class="product-card">
                     <i class="fas fa-book"></i>
@@ -738,4 +762,4 @@
 </script>
 
 </body>
-  </html>
+</html>
