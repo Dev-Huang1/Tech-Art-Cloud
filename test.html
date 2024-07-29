@@ -450,7 +450,16 @@
     margin-top: 10px;
 }
 
+.hero-buttons {
+        flex-direction: column; /* 在移动设备上改为纵向排列 */
+        align-items: center;    /* 按钮居中 */
+    }
 
+    .hero-buttons .btn-expert,
+    .hero-buttons .btn-trial {
+        margin: 10px 0;         /* 调整按钮间距 */
+    }
+            
             .mobile-menu {
                 display: none;
                 position: fixed;
