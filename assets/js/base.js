@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
-    vdocument.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
             loadNews();
             
             // 添加移动端菜单切换功能
