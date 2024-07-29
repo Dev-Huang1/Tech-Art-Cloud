@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function loadNews() {
-    fetch('posts.json')
+    fetch('posts/posts.json')
         .then(response => response.json())
         .then(articles => {
             const newsGrid = document.getElementById('newsGrid');
@@ -30,25 +30,12 @@ function loadNews() {
 function createNewsCard(article) {
     const card = document.createElement('div');
     card.className = 'news-card';
-    
-    // 创建图片元素
-    const img = document.createElement('img');
-    img.src = article.image;
-    img.alt = article.title;
-    img.onerror = function() {
-        console.error(`Failed to load image: ${article.image}`);
-        this.src = 'path/to/placeholder-image.jpg'; // 设置一个默认的占位图片
-    };
-
-    const content = document.createElement('div');
-    content.className = 'news-card-content';
-    content.innerHTML = `
-        <h3>${article.title}</h3>
-        <p>${article.preview}</p>
+    card.innerHTML = `
+        <img src="${article.image}" alt="${article.title}">
+        <div class="news-card-content">
+            <h3>${article.title}</h3>
+            <p>${article.preview}</p>
+        </div>
     `;
-
-    card.appendChild(img);
-    card.appendChild(content);
-
     return card;
 }
