@@ -7,47 +7,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="/assets/images/logo/Tech-Art-Cloud-Logo.png" type="image/x-icon">
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-    loadNews();
-});
-
-function loadNews() {
-    fetch('posts.json')
-        .then(response => response.json())
-        .then(articles => {
-            const newsGrid = document.getElementById('newsGrid');
-            articles.forEach(article => {
-                const card = createNewsCard(article);
-                newsGrid.appendChild(card);
-            });
-        })
-        .catch(error => console.error('Error loading news:', error));
-}
-
-function createNewsCard(article) {
-    const card = document.createElement('div');
-    card.className = 'news-card';
-    card.innerHTML = `
-        <img src="${article.image}" alt="${article.title}">
-        <div class="news-card-content">
-            <h3>${article.title}</h3>
-            <p>${article.preview}</p>
-        </div>
-    `;
-    return card;
-}
-    </script>
+    <script src="/assets/js/base.js"></script>
     <style>
-        @font-face {
-            font-family: 'Open Sans';
-            font-style: normal;
-            font-weight: 400;
-            font-stretch: normal;
-            font-display: swap;
-            src: url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4nY1U2xQ.ttf) format('truetype');
-        }
-        
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+
         body {
             margin: 0;
             padding: 0;
@@ -141,106 +104,107 @@ function createNewsCard(article) {
             color: #222224;
         }
         .hero {
-    background: url('assets/images/banner.png') no-repeat center center;
-    background-size: cover;
-    padding: 80px 65px;
-    display: flex;
-    align-items: center;
-}
+            background: url('assets/images/banner.png') no-repeat center center;
+            background-size: cover;
+            padding: 80px 65px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+        }
+        
+        .hero h1 {
+            font-size: 46px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #222224;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #222224;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.1)
+        }
+        
+        .btn-1 {
+            background-color: #0066ff;
+            color: #fff;
+        }
+        
+        .btn-2 {
+            background-color: #fff;
+            color: #222224;
+            border: 1px solid #0066ff;
+        }
+        
+        .features {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px 65px;
+            background-color: #fff;
+        }
+        
+        .feature-card {
+            flex: 1;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 20px;
+            margin: 0 10px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1)
+        }
 
-.hero-content {
-    max-width: 600px;
-}
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .feature-card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .feature-link {
+            color: #4285f4;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
 
-.hero h1 {
-    font-size: 46px;
-    margin-bottom: 20px;
-    font-weight: bold;
-    color: #222224;
-}
-
-.hero p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    color: #222224;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 12px 24px;
-    border-radius: 12px;
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background-color 0.3s;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1)
-}
-
-.btn-1 {
-    background-color: #0066ff;
-    color: #fff;
-}
-
-.btn-2 {
-    background-color: #fff;
-    color: #222224;
-    border: 1px solid #0066ff;
-}
-
-.features {
-    display: flex;
-    justify-content: space-between;
-    padding: 40px 65px;
-    background-color: #fff;
-}
-
-.feature-card {
-    flex: 1;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 23px;
-    margin: 0 10px;
-    box-shadow: 0 0 8px rgba(0,0,0,0.1)
-}
-
-.feature-card h3 {
-    font-size: 20px;
-    margin-bottom: 15px;
-    color: #333;
-}
-
-.feature-card p {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 15px;
-}
-
-.feature-link {
-    color: #4285f4;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-@media screen and (max-width: 768px) {
-    .hero {
-        padding: 60px 20px;
-    }
-    
-    .features {
-        flex-direction: column;
-        padding: 20px;
-    }
-    
-    .feature-card {
-        margin: 10px 0;
-    }
-}
+        @media screen and (max-width: 768px) {
+            .hero {
+                padding: 60px 20px;
+            }
+            
+            .features {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            .feature-card {
+                margin: 10px 0;
+            }
+        }
+        
         .content {
             padding: 40px 20px;
             background-color: #fff;
@@ -258,7 +222,7 @@ function createNewsCard(article) {
         .product-card {
             background-color: #fff;
             /*border: 1px solid #e0e0e0;*/
-            border-radius: 23px;
+            border-radius: 20px;
             padding: 20px;
             transition: box-shadow 0.3s;
             box-shadow: 0 0 8px rgba(0,0,0,0.1)
@@ -299,7 +263,7 @@ function createNewsCard(article) {
         .step-card {
             background-color: #fff;
             border: 1px solid #e0e0e0;
-            border-radius: 23px;
+            border-radius: 20px;
             padding: 20px;
             transition: box-shadow 0.3s;
             text-alight: center;
@@ -350,7 +314,7 @@ function createNewsCard(article) {
         .featured-product {
             display: flex;
             background: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
-            border-radius: 23px;
+            border-radius: 20px;
             overflow: hidden;
             margin-bottom: 40px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -405,7 +369,7 @@ function createNewsCard(article) {
 
         .news-card {
             background-color: #fff;
-            border-radius: 23px;
+            border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
@@ -441,6 +405,17 @@ function createNewsCard(article) {
         .mobile-menu {
             display: none;
         }
+
+        .product-card, .feature-card, .step-card, .news-card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        
+        .product-card.show, .feature-card.show, .step-card.show, .news-card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
         
         @media screen and (max-width: 768px) {
             .search-icon, .hamburger-icon, {
@@ -475,26 +450,26 @@ function createNewsCard(article) {
             }
 
             .hamburger-icon.active i::before {
-    content: "\f00d"; /* fa-times */
-}
-
-.mobile-menu .contacts-btn {
-    display: block;
-    width: 90px;
-    padding: 10px;
-    border: 1px solid gray;
-    border-radius: 12px;
-    text-align: center;
-    color: #5c5c5c;
-    text-decoration: none;
-    font-size: 16px;
-    margin-top: 10px;
-}
-
-.hero-buttons {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+                content: "\f00d"; /* fa-times */
+            }
+            
+            .mobile-menu .contacts-btn {
+                display: block;
+                width: 90px;
+                padding: 10px;
+                border: 1px solid gray;
+                border-radius: 12px;
+                text-align: center;
+                color: #5c5c5c;
+                text-decoration: none;
+                font-size: 16px;
+                margin-top: 10px;
+            }
+            
+            .hero-buttons {
+                    flex-direction: column;
+                    align-items: flex-start;
+            }
             
             .mobile-menu {
                 display: none;
@@ -734,5 +709,33 @@ function createNewsCard(article) {
             }, 1869);
         }
     </script>-->
+
+    <script>
+    function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    function handleScroll() {
+        var cards = document.querySelectorAll('.product-card, .feature-card, .step-card, .news-card');
+        cards.forEach(function(card) {
+            if (isElementInViewport(card)) {
+                card.classList.add('show');
+            }
+        });
+    }
+
+    // Trigger the effect on initial load
+    handleScroll();
+
+    // Listen for scroll events
+    window.addEventListener('scroll', handleScroll);
+</script>
+
 </body>
   </html>
