@@ -13,7 +13,7 @@
 });
 
 function loadNews() {
-    fetch('posts.json')
+    fetch('posts/posts.json')
         .then(response => response.json())
         .then(articles => {
             const newsGrid = document.getElementById('newsGrid');
