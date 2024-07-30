@@ -7,7 +7,37 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="/assets/images/logo/favicon.ico" type="image/x-icon">
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-    <script src="/assets/js/base.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    loadNews();
+});
+
+function loadNews() {
+    fetch('posts/posts.json')
+        .then(response => response.json())
+        .then(articles => {
+            const newsGrid = document.getElementById('newsGrid');
+            articles.forEach(article => {
+                const card = createNewsCard(article);
+                newsGrid.appendChild(card);
+            });
+        })
+        .catch(error => console.error('Error loading news:', error));
+}
+
+function createNewsCard(article) {
+    const card = document.createElement('div');
+    card.className = 'news-card';
+    card.innerHTML = `
+        <img src="${article.image}" alt="${article.title}">
+        <div class="news-card-content">
+            <h3>${article.title}</h3>
+            <p>${article.preview}</p>
+        </div>
+    `;
+    return card;
+}
+    </script>
     <style>
         @import url('/assets/font/open-sans.css');
 
@@ -168,8 +198,8 @@
         }
 
         .why-tech-art {
-            background-color: #2e2e2e;
-            color: white;
+            background-color: #fff;
+            color: 222224;
             padding: 50px 20px;
         }
         
@@ -180,8 +210,9 @@
         }
         
         .section-title2 {
-            font-size: 2.5em;
-            margin-bottom: 40px;
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #222224;
         }
         
         .features2 {
@@ -313,7 +344,7 @@
             margin-bottom: 15px;
         }
         .product-card a {
-            color: #4285f4;
+            color: #0066ff;
             text-decoration: none;
             font-weight: bold;
             font-size: 14px;
@@ -371,7 +402,7 @@
             margin-bottom: 20px;
         }
         .footer-links a {
-            color: #6c6c6c;
+            color: #2c2c2c;
             text-decoration: none;
             margin: 0 10px;
             font-size: 14px;
@@ -569,7 +600,7 @@
                 background: url('assets/images/banner.png') no-repeat center center;
                 background-size: cover;
                 padding: 80px 20px;
-                height: 385px;
+                height: 400px;
             }
 
             .hero h1 {
@@ -591,10 +622,10 @@
     </style>
 </head>   
 <body>
-    <div id="captcha-container" class="captcha-container">
+    <!--<div id="captcha-container" class="captcha-container">
         <img src="assets/images/logo/Tech-Art-Cloud-Logo.png" width="84" margin-buttom="20px">
         <div class="cf-turnstile" data-sitekey="0x4AAAAAAAfuEfC_OCoYQaNL" data-callback="onTurnstileSuccess"></div>
-    </div>
+    </div>-->
     
     <div id="original-content" class="">
         <header class="header">
@@ -651,17 +682,14 @@
     <div class="feature-card">
         <h3>5+ services and growing</h3>
         <p>An expanding ecosystem of services covering all Internet security needs: One Captcha, One Pass Box.</p>
-        <a href="#" class="feature-link">Explore our services</a>
     </div>
     <div class="feature-card">
         <h3>Secure, free and open source</h3>
         <p>Our mission is to protect the security and privacy of the Internet, and our projects are open source.</p>
-        <a href="#" class="feature-link">Get Started</a>
     </div>
     <div class="feature-card">
         <h3>Committed to innovation</h3>
-        <p>ROur team is committed to innovation and has developed many services and products to protect security.</p>
-        <a href="#" class="feature-link">Join us</a>
+        <p>Our team is committed to innovation and has developed many services and products to protect security.</p>
     </div>
 </section>
 
@@ -670,17 +698,17 @@
             <h3 class="section-title2">Why Tech-Art</h3>
             <div class="features2">
                 <div class="feature-item">
-                    <img src="assets/images/icon/database.svg" alt="Icon 1" class="feature-icon">
+                    <img src="assets/images/icon/support.svg" alt="Icon 1" class="feature-icon">
                     <h3 class="feature-title">High Performance</h3>
                     <p class="feature-description">Deploy your projects in three geographically distributed data centers where Tech-Art hosts its applications.</p>
                 </div>
                 <div class="feature-item">
-                    <img src="assets/images/icon/cloud.svg" alt="Icon 2" class="feature-icon">
+                    <img src="assets/images/icon/economy.svg" alt="Icon 2" class="feature-icon">
                     <h3 class="feature-title">In-house Infrastructure</h3>
                     <p class="feature-description">Rely on Tech-Art’s fully in-house data centers, with proprietary licensing hardware and software, and independent power sources.</p>
                 </div>
                 <div class="feature-item">
-                    <img src="assets/images/icon/server.svg" alt="Icon 3" class="feature-icon">
+                    <img src="assets/images/icon/flag.svg" alt="Icon 3" class="feature-icon">
                     <h3 class="feature-title">Compliance</h3>
                     <p class="feature-description">The Tech-Art Cloud platform meets the requirements of privacy laws, GDPR, and ISO industry standards.</p>
                 </div>
@@ -779,7 +807,7 @@
             <p class="footer-text">&copy; Tech-Art Cloud 2024</p>
         </footer>
     </div>
-    <script>
+    <!--<script>
         function generateRandomString(length) {
             const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789#%@*&';
             let result = '';
@@ -800,7 +828,9 @@
                 document.getElementById('original-content').classList.remove('hidden');
             }, 1869);
         }
+    </script>-->
 
+    <script>
     function isElementInViewport(el) {
         var rect = el.getBoundingClientRect();
         return (
