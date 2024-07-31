@@ -1,4 +1,6 @@
-# Tech-Art-Cloud
+<div align="center">
+
+<h1>Tech-Art Cloud</h1>
 
 <p align="center">
 <a href="https://github.com/Dev-Huang1/Tech-Art-Cloud/blob/master/LICENSE" target="blank">
@@ -17,3 +19,5 @@
 <img src="https://img.shields.io/github/issues-pr/Dev-Huang1/Tech-Art-Cloud?style=flat-square" alt="pull-requests"/>
 </a>
 </p>
+
+</div>
