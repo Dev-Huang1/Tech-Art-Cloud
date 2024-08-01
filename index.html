@@ -195,6 +195,7 @@ function createNewsCard(article) {
             justify-content: space-between;
             padding: 40px 65px;
             background-color: #fff;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         }
 
         .why-tech-art {
@@ -698,8 +699,6 @@ function createNewsCard(article) {
         <h3>Developer Tools</h3>
         <p>Tools for testing projects</p>
     </div>
-</section>
-<section class="features">
     <div class="feature-card">
         <img src="assets/images/icon/lock.svg" alt="Icon 4" class="feature-card-icon">
         <h3>Security</h3>
