@@ -41,10 +41,20 @@ function createNewsCard(article) {
     <style>
         @import url('/assets/font/open-sans.css');
 
+        @font-face {
+            font-family: 'ECA-M';
+            src: url('assets/font/ECA-Medium.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'ECA-L';
+            src: url('assets/font/ECA-Light.ttf') format('truetype');
+        }
+        
         body {
             margin: 0;
             padding: 0;
-            font-family: "Open Sans", sans-serif;
+            font-family: "ECA-L", "Open Sans", sans-serif;
             color: #000;
             background-color: #fff;
         }
@@ -156,6 +166,7 @@ function createNewsCard(article) {
             font-size: 18px;
             margin-bottom: 30px;
             color: #222224;
+            font-family: "ECA-L";
         }
         
         .hero-buttons {
