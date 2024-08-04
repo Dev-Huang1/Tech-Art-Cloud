@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        window.onload = function() {
+            // 获取用户的语言设置
+            var userLang = navigator.language || navigator.userLanguage;
+
+            // 提取语言代码（例如 'en'）
+            var langCode = userLang.split('-')[0].toLowerCase();
+
+            // 根据语言代码进行跳转
+            if (langCode === 'en') {
+                window.location.href = '/en';
+            } else if (langCode === 'ru') {
+                window.location.href = '/ru';
+            } else {
+                window.location.href = '/en';
+            }
+        };
+    </script>
+</head>
+<body>
+</body>
+</html>
