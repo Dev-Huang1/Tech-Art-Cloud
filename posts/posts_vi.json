@@ -1,1 +1,23 @@
-
+[
+  {
+    "id": "Tech-Art-Cloud",
+    "title": "Chào mừng đến với Tech-Art Cloud",
+    "date": "2024-03-15",
+    "image": "../assets/images/banner.png",
+    "preview": "Chào mừng đến với Trung tâm dịch vụ Tech-Art Cloud, chúng tôi đang trong quá trình xây dựng"
+  },
+  {
+    "id": "",
+    "title": "One Captcha",
+    "date": "2024-03-10",
+    "image": "../assets/images/post/One-Captcha.png",
+    "preview": "Một sản phẩm Captcha miễn phí bảo vệ quyền riêng tư của người dùng"
+  },
+  {
+    "id": "test",
+    "title": "3",
+    "date": "2024-1-32",
+    "image": "1.jpg",
+    "preview": "test"
+  }
+]
