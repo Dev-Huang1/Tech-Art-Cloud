@@ -1,17 +1,17 @@
 [
   {
     "id": "Tech-Art-Cloud",
-    "title": "Welcome to Tech-Art Cloud",
+    "title": "Willkommen bei Tech-Art Cloud",
     "date": "2024-03-15",
     "image": "../assets/images/banner.png",
-    "preview": "Welcome to Tech-Art Cloud Service Center, we are under construction"
+    "preview": "Willkommen im Tech-Art Cloud Service Center, wir befinden uns im Aufbau"
   },
   {
     "id": "",
     "title": "One Captcha",
     "date": "2024-03-10",
     "image": "../assets/images/post/One-Captcha.png",
-    "preview": "A free Captcha product that protects user privacy"
+    "preview": "Ein kostenloses Captcha-Produkt, das die Privatsphäre der Benutzer schützt"
   },
   {
     "id": "test",
