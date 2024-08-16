@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="/assets/images/logo/favicon.ico" type="image/x-icon">
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-    <meta property="og:title" content="Trang chủ Tech-Art Cloud">
-    <meta property="og:description" content="Một nền tảng đám mây mới cung cấp cơ sở hạ tầng có khả năng mở rộng và các công cụ phát triển để xây dựng và nâng cao các dịch vụ và ứng dụng kỹ thuật số.">
+    <meta property="og:title" content="Tech-Art Cloud Home">
+    <meta property="og:description" content="Eine neue Cloud-Plattform, die skalierbare Infrastruktur und Entwicklungstools zum Erstellen und Verbessern digitaler Dienste und Anwendungen bietet.">
     <meta property="og:image" content="https://cloud.xyehr.cn/assets/images/logo/Tech-Art-Cloud-Logo.png">
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -16,7 +16,7 @@
         });
 
 function loadNews() {
-    fetch('posts/posts_vi.json')
+    fetch('posts/posts.json')
         .then(response => response.json())
         .then(articles => {
             const newsGrid = document.getElementById('newsGrid');
@@ -654,22 +654,22 @@ function createNewsCard(article) {
             </div>
             <nav class="nav">
                 <div class="dropdown">
-                    <span>Duyệt</span>
+                    <span>Durchsuchen</span>
                     <div class="dropdown-content">
-                        <a href="#">Tìm hiểu về dịch vụ đám mây</a>
+                        <a href="#">Erfahren Sie mehr über Cloud-Dienste</a>
                     </div>
                 </div>
                 <div class="dropdown">
-                    <span>Sản phẩm</span>
+                    <span>Produkt</span>
                     <div class="dropdown-content">
-                        <a href="#">Xem tất cả sản phẩm (5+)</a>
+                        <a href="#">Alle Produkte anzeigen (5+)</a>
                         <a href="">One Translate</a>
                         <a href="https://captcha.xyehr.cn/demo/v3-db">One Captcha</a>
                         <a href="https://pass.xyehr.cn">One Pass Box</a>
                     </div>
                 </div>
-                <a href="https://help.xyehr.cn">Giúp đỡ</a>
-                <a href="mailto:support@xyehr.cn">Liên hệ hỗ trợ</a>
+                <a href="https://help.xyehr.cn">Helfen</a>
+                <a href="mailto:support@xyehr.cn">Support kontaktieren</a>
             </nav>
             <div class="mobile-nav">
                 <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
@@ -678,21 +678,21 @@ function createNewsCard(article) {
         </header>
     
         <div class="mobile-menu">
-            <a href="#">Duyệt</a>
-            <a href="#">Sản phẩm</a>
-            <a href="help.xyehr.cn">Giúp đỡ</a>
-            <a href="mailto:support@xyehr.cn">Liên hệ hỗ trợ</a>
-            <a href="#" class="contacts-btn">Liên hệ</a>
+            <a href="#">Durchsuchen</a>
+            <a href="#">Produkt</a>
+            <a href="help.xyehr.cn">Helfen</a>
+            <a href="mailto:support@xyehr.cn">Support kontaktieren</a>
+            <a href="#" class="contacts-btn">Kontakte</a>
         </div>
     
         <section class="hero">
     <div class="hero-content">
         <h1>Tech-Art Cloud</h1>
-        <p>Một nền tảng đám mây mới cung cấp cơ sở hạ tầng có khả năng mở rộng và các công cụ phát triển để xây dựng và nâng cao các dịch vụ và ứng dụng kỹ thuật số.</p>
-        <p>Được phát triển bởi Tech-Art, một trong những nhóm về công nghệ sản xuất sản phẩm và dịch vụ thông minh.</p>
+        <p>Eine neue Cloud-Plattform, die skalierbare Infrastruktur und Entwicklungstools zum Erstellen und Verbessern digitaler Dienste und Anwendungen bietet.</p>
+        <p>Entwickelt von Tech-Art, einem der Teams für intelligente Produkt- und Servicefertigungstechnologie.</p>
         <div class="hero-buttons">
-            <a href="#" class="btn btn-1">Khám phá dịch vụ của chúng tôi</a>
-            <a href="#" class="btn btn-2">Tham gia cùng chúng tôi</a>
+            <a href="#" class="btn btn-1">Entdecken Sie unsere Dienstleistungen</a>
+            <a href="#" class="btn btn-2">Begleiten Sie uns</a>
         </div>
     </div>
 </section>
@@ -700,73 +700,73 @@ function createNewsCard(article) {
 <section class="features">
     <div class="feature-card">
         <img src="assets/images/icon/square-dashed.svg" alt="Icon 1" class="feature-card-icon">
-        <h3>Điện toán không máy chủ</h3>
-        <p>Cho phép tăng trưởng nhanh chóng và hoạt động hiệu quả mà không cần bảo trì máy chủ</p>
+        <h3>Serverloses Computing</h3>
+        <p>Ermöglichen Sie schnelles Wachstum und effizienten Betrieb ohne Serverwartung</p>
     </div>
     <div class="feature-card">
         <img src="assets/images/icon/cubes.svg" alt="Icon 2" class="feature-card-icon">
-        <h3>Nhiều dịch vụ</h3>
-        <p>5+ dịch vụ và sản phẩm đang chạy</p>
+        <h3>Viele Dienstleistungen</h3>
+        <p>5+ Dienste und Produkte laufen</p>
     </div>
     <div class="feature-card">
         <img src="assets/images/icon/terminal-line.svg" alt="Icon 3" class="feature-card-icon">
-        <h3>Công cụ dành cho nhà phát triển</h3>
-        <p>Công cụ để thử nghiệm dự án</p>
+        <h3>Entwicklertools</h3>
+        <p>Tools zum Testen von Projekten</p>
     </div>
     <div class="feature-card">
         <img src="assets/images/icon/lock.svg" alt="Icon 4" class="feature-card-icon">
-        <h3>Bảo vệ</h3>
-        <p>Công cụ quản lý bảo mật dự án</p>
+        <h3>Sicherheit</h3>
+        <p>Tools zur Verwaltung der Projektsicherheit</p>
     </div>
     <div class="feature-card">
         <img src="assets/images/icon/briefcase.svg" alt="Icon 4" class="feature-card-icon">
-        <h3>Công cụ kinh doanh</h3>
-        <p>Công cụ để hình dung tổ chức và khách hàng của bạn</p>
+        <h3>Geschäftstools</h3>
+        <p>Tools zur Visualisierung Ihrer Organisation und Ihrer Kunden</p>
     </div>
     <div class="feature-card">
         <img src="assets/images/icon/flag2.svg" alt="Icon 4" class="feature-card-icon">
-        <h3>Sự đổi mới</h3>
-        <p>Chúng tôi đổi mới và phát triển các tính năng và dịch vụ mới</p>
+        <h3>Innovation</h3>
+        <p>Wir innovieren und entwickeln neue Funktionen und Dienste</p>
     </div>
 </section>
 
     <section class="why-tech-art">
         <div class="container2">
-            <h3 class="section-title2">Tại sao Tech-Art</h3>
+            <h3 class="section-title2">Warum Tech-Art</h3>
             <div class="features2">
                 <div class="feature-item">
                     <img src="assets/images/icon/support.svg" alt="Icon 1" class="feature-icon">
-                    <h3 class="feature-title">Hiệu suất cao</h3>
-                    <p class="feature-description">Tech-Art đảm bảo thời gian phản hồi nhanh chóng và trải nghiệm liền mạch cho người dùng, cung cấp các giải pháp với tốc độ và hiệu quả vô song.</p>
+                    <h3 class="feature-title">Hohe Leistung</h3>
+                    <p class="feature-description">Tech-Art gewährleistet schnelle Reaktionszeiten und nahtlose Benutzererlebnisse und liefert Lösungen mit beispielloser Geschwindigkeit und Effizienz.</p>
                 </div>
                 <div class="feature-item">
                     <img src="assets/images/icon/economy.svg" alt="Icon 2" class="feature-icon">
-                    <h3 class="feature-title">Hiệu quả & Đổi mới</h3>
-                    <p class="feature-description">Tech-Art cung cấp các giải pháp không cần máy chủ để sử dụng nhanh chóng và khả năng mở rộng. Phương pháp của chúng tôi loại bỏ việc bảo trì máy chủ truyền thống và cung cấp các dịch vụ hiệu quả và đáng tin cậy.</p>
+                    <h3 class="feature-title">Effizienz & Innovation</h3>
+                    <p class="feature-description">Tech-Art bietet serverlose Lösungen für schnelle Nutzung und Skalierbarkeit. Unser Ansatz macht die herkömmliche Serverwartung überflüssig und bietet effiziente und zuverlässige Dienste.</p>
                 </div>
                 <div class="feature-item">
                     <img src="assets/images/icon/locked-cloud.svg" alt="Icon 3" class="feature-icon">
-                    <h3 class="feature-title">Bảo mật & Quyền riêng tư</h3>
-                    <p class="feature-description">Nền tảng Tech-Art Cloud tuân thủ GDPR, CCPA, LGPD, Luật bảo mật của Nga và Luật nguyên tắc bảo mật của Úc.</p>
+                    <h3 class="feature-title">Sicherheit & Datenschutz</h3>
+                    <p class="feature-description">Die Tech-Art Cloud-Plattform entspricht der DSGVO, dem CCPA, dem LGPD, dem russischen Datenschutzgesetz und dem australischen Datenschutzgesetz.</p>
                 </div>
             </div>
         </div>
     </section>
     
         <section class="news-section">
-            <h2 class="section-title">Tìm hiểu về tin tức</h2>
+            <h2 class="section-title">Erfahren Sie mehr über Neuigkeiten</h2>
                 <div class="news-grid" id="newsGrid">
                     <!-- 文章将在这里动态加载 -->
                 </div>
         </section>
         
         <section class="content">
-            <h2 class="section-title">Sản phẩm & Dịch vụ</h2>
+            <h2 class="section-title">Produkt & Service</h2>
             <div class="featured-product">
                 <div class="featured-product-content">
                     <h3>One Cloud Storage</h3>
-                    <p>Lưu trữ các tập tin của bạn một cách an toàn trên đám mây của chúng tôi</p>
-                    <a href="" class="btn">Hãy theo dõi</a>
+                    <p>Speichern Sie Ihre Dateien sicher in unserer Cloud</p>
+                    <a href="" class="btn">Bleiben Sie dran</a>
                 </div>
                 <div class="featured-product-image">
                     <!-- 这里可以放置产品相关的图片 -->
@@ -776,70 +776,70 @@ function createNewsCard(article) {
                 <div class="product-card">
                     <img src="https://captcha.xyehr.cn/assets/logo/One-Captcha-Logo.png" width="45px" height="45px">
                     <h3>One Captcha</h3>
-                    <p>Thêm One Captcha trong vài giây.</p>
-                    <a href="#">Xem trước sản phẩm</a>
+                    <p>Fügen Sie in Sekundenschnelle ein Captcha hinzu.</p>
+                    <a href="#">Produktvorschau</a>
                 </div>
                 <div class="product-card">
                     <img src="https://pass.xyehr.cn/assets/images/One-Pass-Logo.png" width="45px" height="45px">
                     <h3>One Pass</h3>
-                    <p>Trình tạo mật khẩu an toàn.</p>
-                    <a href="https://pass.xyehr.cn" target="_blank">Xem trước sản phẩm</a>
+                    <p>Sicherer Passwortgenerator.</p>
+                    <a href="https://pass.xyehr.cn" target="_blank">Produktvorschau</a>
                 </div>
                 <div class="product-card">
                     <img src="https://notes.xyehr.cn/assets/images/Easy-Notes-Logo.png" width="45px" height="45px">
                     <h3>Easy Notes</h3>
-                    <p>Lưu trữ ghi chú cục bộ.</p>
-                    <a href="https://notes.xyehr.cn/" taget="_blank">Xem trước sản phẩm</a>
+                    <p>Speichern Sie Ihre Notizen lokal.</p>
+                    <a href="https://notes.xyehr.cn/" taget="_blank">Produktvorschau</a>
                 </div>
                 <div class="product-card">
                     <i class="fas fa-server"></i>
                     <h3>One Cloud Storage</h3>
-                    <p>Lưu trữ các tập tin của bạn một cách an toàn trên đám mây của chúng tôi</p>
-                    <a href="">Hãy theo dõi</a>
+                    <p>Speichern Sie Ihre Dateien sicher in unserer Cloud</p>
+                    <a href="">Bleiben Sie dran</a>
                 </div>
                 <div class="product-card">
                     
                     <h3>One Translate</h3>
-                    <p>Dịch vụ dịch thuật miễn phí.</p>
-                    <a href="">Hãy theo dõi</a>
+                    <p>Kostenloser Übersetzungsdienst.</p>
+                    <a href="">Bleiben Sie dran</a>
                 </div>
                 <div class="product-card">
                     <i class="fas fa-mail"></i>
                     <h3>One Mail</h3>
-                    <p>Một dịch vụ email an toàn</p>
-                    <a href="">Hãy theo dõi</a>
+                    <p>Ein sicherer E-Mail-Dienst</p>
+                    <a href="">Bleiben Sie dran</a>
                 </div>
             </div>
         </section>
     
         <section class="next-steps">
-            <h2 class="section-title">Thực hiện bước tiếp theo</h2>
+            <h2 class="section-title">Der nächste Schritt</h2>
             <div class="step-grid">
                 <div class="product-card">
                     <i class="fas fa-rocket"></i>
-                    <h3>Bắt đầu</h3>
-                    <p>Hãy bắt đầu ngay bây giờ và dùng thử sản phẩm đầu tiên của chúng tôi</p>
-                    <a href="">Bắt đầu</a>
+                    <h3>Erste Schritte</h3>
+                    <p>Legen Sie jetzt los und testen Sie unser erstes Produkt</p>
+                    <a href="">Erste Schritte</a>
                 </div>
                 <div class="product-card">
                     <i class="fas fa-book"></i>
-                    <h3>Học hỏi</h3>
-                    <p>Khám phá tài liệu hướng dẫn và nguồn tài nguyên phong phú của chúng tôi.</p>
+                    <h3>Lernen</h3>
+                    <p>Entdecken Sie unsere umfangreichen Dokumentations- und Tutorial-Ressourcen.</p>
                     <a href=""></a>
                 </div>
                 <div class="product-card">
                     <i class="fas fa-users"></i>
-                    <h3>Tham gia cộng đồng</h3>
-                    <p>Kết nối với các nhà phát triển khác và nhận hỗ trợ.</p>
-                    <a href="https://discord.gg/4v4YFkdDjH">Tham gia cộng đồng Discord của chúng tôi</a>
+                    <h3>Community beitreten</h3>
+                    <p>Vernetzen Sie sich mit anderen Entwicklern und erhalten Sie Unterstützung.</p>
+                    <a href="https://discord.gg/4v4YFkdDjH">Treten Sie unserer Discord-Community bei</a>
                 </div>
             </div>
         </section>
     
         <footer>
             <div class="footer-links">
-                <a href="#">Liên hệ với chúng tôi</a>
-                <a href="#">Báo cáo sự cố</a>
+                <a href="#">Kontaktieren Sie uns</a>
+                <a href="#">Problem melden</a>
             </div>
             <p class="footer-text">&copy; Tech-Art Cloud 2024</p>
         </footer>
@@ -895,4 +895,4 @@ function createNewsCard(article) {
 </script>
 
 </body>
-</html>
+  </html>
